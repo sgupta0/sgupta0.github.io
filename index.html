@@ -3,9 +3,145 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>My Homepage</title>
+     <!-- <link rel="stylesheet" href="./main.css"> -->
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Full height for the body */
+            font-family: sans-serif;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .intro {
+            background-color: black; /* Replace with your image URL */
+            background-size: cover; /* Cover the entire container */
+            background-position: center; /* Center the background */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            position: relative; /* Position for the title */
+            color: red; /* Text color */
+            overflow: hidden;
+        }
+
+        .intro h1 {
+            font-size: 250px; /* Large font size */
+            line-height: 210px;
+            text-align: center; /* Center the title */
+            text-color: red;
+            margin: 0; /* Remove default margin */
+            z-index: 1000;
+        }
+
+.contents {
+   background-color: black; /* Replace with your image URL */
+           /* background-size: cover; 
+            background-position: center; */
+            height: 100%; /* Full viewport height */
+            width: 100%;
+            position: absolute;
+/*            display: flex; */
+            justify-content: left; /* Center horizontally */
+            align-items: center; /* Center vertically */
+/*            position: relative; */
+            color: lightblue; /* Text color */
+            overflow-y: hidden;
+            left:70px;
+            top:30px;
+            line-height: 30px;
+            font-size: 18px;
+            font-style: italic;
+            text-decoration: underline;
+            text-decoration-color: whitesmoke;
+  text-underline-offset: 15px;
+
+
+/*            font-style: italic;*/
+/*            font-weight: 200;*/
+
+}
+
+
+   
+   .contents a {
+  color: lightblue;
+  text-decoration: none;
+  font-style: regular;
+  font-style: italic;
+/*  font-weight: 300;*/
+}
+
+.contents a:hover {
+  color: red;
+  font-style: italic;
+/*  font-weight: 300;*/
+}     
+
+#lines {
+   display: inline-block; 
+            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            
+            width: 90%; 
+            padding-bottom: 22px;
+}
+
+    </style>
   </head>
+
   <body>
-   <h1> Hello World </h1>
-   <h2> <a href="./handmade/handmade1.html">A Handmade Web</a> </h2>
+     <div class="intro">
+        <!-- <div class="overlay"></div> -->
+        <h1>WEB AS MEDIUM</h1>
+    </div>
+
+<div class="contents">
+  <h2>
+    <p> <span id="lines"><a href="./handmade/handmade1.html">1. A Handmade Web</a></span></p>
+    <p><span id="lines"> 2. Assignment two </span></p>
+    <p> <span id="lines">3. Assignment three </span></p>
+    <p> <span id="lines">4. Assignment four </span></p>
+    <p> <span id="lines">5. Assignment five</span> </p>
+    <p> <span id="lines">6. Assignment six </span></p>
+    <p> <span id="lines">7. Assignment seven </span></p>
+    <p> <span id="lines">8. Assignment eight </span></p>
+    
+  </h2>
+</div>
+
+
+
+   <!-- <h1> Hello World </h1> -->
+  <!--  <h1 style="font-size: 180px;
+   font-family: sans-serif;
+   color: floralwhite;
+   z-index: 1000;
+   text-align: center;
+   align-items: center;
+   background-color:black;
+   padding-top:200px;
+   margin: none;
+   overflow-x: hidden;
+   overflow-y: hidden;
+   "> WEB AS MEDIUM </h1> -->
+
+
+
+<!-- 
+     <h2 style="font-size: 16px;
+   font-family: sans-serif;
+   color: red;
+   z-index: -10;
+   text-align: left;
+   align-items: left;
+   background-color:black;
+   padding-top:50px;
+   margin: none;
+   overflow-x: hidden;
+   overflow-y: hidden;"><a href="./handmade/handmade1.html">A Handmade Web</a> </h2> -->
+    <!-- <div class="horizontal-line"></div> -->
   </body>
 </html>
+

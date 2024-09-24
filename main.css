@@ -1,0 +1,128 @@
+body {
+ color: whitesmoke;
+ background-color: black;
+ font-family: sans-serif;
+/* padding-top:75px;*/
+ text-align: left;
+ position: relative;
+ top: 32px;
+ right: 0;
+ line-height: 22px;
+ font-size: 16px;
+ overflow-x: hidden;
+ overflow-y: scroll;
+/*  overflow-wrap: break-word;*/
+  width: 48%;
+  margin-left: auto;
+  margin-right: 0;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.rightbox a {
+	color: lightblue;
+	text-decoration: none;
+	font-style: italic;
+}
+
+.rightbox a:hover {
+	color: red;
+}
+
+
+/*
+h1 {
+	color: red;
+	background-color: black;
+	font-family: sans-serif;
+	position: fixed;
+	left: 0;
+	top: 0;
+	font-size: 20px;
+	border: 1px solid #ccc;
+    padding: 20px;
+    text-decoration: none;
+    width: 47%;
+     margin-right: auto;
+
+}*/
+
+
+#bodytext {
+color: whitesmoke;
+font-family: sans-serif;
+text-align: left;
+/*padding-left: 700px;*/
+background-color: black;
+
+}
+
+
+#indented {
+margin-left: 80px;
+color: red;
+font-family: sans-serif;
+font-style: italic;
+/*font-size: 14px;*/
+text-align: left;
+/*padding-left: 700px;*/
+background-color: black;
+}
+
+  .menu-bar {
+            position: fixed; /* Fix the menu to the top */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            width: 99%; /* Full width */
+            background-color: black; /* Background color */
+            color: white; /* Text color */
+            display: flex; /* Flexbox for layout */
+            justify-content: space-between;
+            height: 24px;
+            align-items: center; 
+            padding: 10px;
+            z-index: 1000; 
+            border: 1px solid #ccc;
+            
+        }
+
+         .menu-bar h1 {
+            margin: 0; /* Remove default margin 
+            font-size: 1.5em; /* Title size */
+            font-size: 16px;
+            font-style: none;
+            font-family: sans-serif;
+
+            color: red;
+
+        }
+
+
+          .menu-bar a {
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px; /* Spacing around links */
+            font-family: sans-serif;
+                }
+
+        .menu-bar a:hover {
+            color: red; 
+        }
+
+       
+#underline {
+	text-decoration: underline;
+	text-decoration-color: lightblue;
+	text-underline-offset: 3px;
+}
+
+
+/*.container{
+display: flex;
+margin: 20px;
+}
+
+.image {
+	width:50%;
+	height: auto;
+	}*/
