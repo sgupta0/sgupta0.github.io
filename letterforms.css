@@ -1,0 +1,876 @@
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+body, html {
+    height: 100%;
+    font-family: helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.title {
+    font-size: 15;
+    top: 15;
+    left: 30;
+    text-align: center;
+    color: blue;
+
+}
+
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, rgba(255, 0, 0) 0.1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 0, 0) 0.1px, transparent 1px);
+    background-size: 15px 15px; /* Adjust size for larger/smaller squares */
+    z-index: -1;
+}
+
+#b-1 {
+/*    border: solid 0.1px black;*/
+    width:165px;
+    height: 330px;
+    position: relative;
+    top: 184px;
+    left: 11px
+}
+
+[class^="square-"] {
+    background-color: red;
+    /*width: 15px;
+    height: 15px;*/
+/*    border: solid 1px red;*/
+}
+
+.square-1 {
+    position: absolute;
+    top: 11px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-2 {
+    position: absolute;
+    top: 26px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-3 {
+    position: absolute;
+    top: 41px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-4 {
+    position: absolute;
+    top: 56px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-5 {
+    position: absolute;
+    top: 71px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-6 {
+    position: absolute;
+    top: 86px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-7 {
+    position: absolute;
+    top: 101px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-8 {
+    position: absolute;
+    top: 116px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-9 {
+    position: absolute;
+    top: 131px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-10 {
+    position: absolute;
+    top: 146px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-11 {
+    position: absolute;
+    top: 161px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-12 {
+    position: absolute;
+    top: 176px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-13 {
+    position: absolute;
+    top: 191px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-14 {
+    position: absolute;
+    top: 206px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-15 {
+    position: absolute;
+    top: 221px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-16 {
+    position: absolute;
+    top: 236px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-17 {
+    position: absolute;
+    top: 251px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-18 {
+    position: absolute;
+    top: 266px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-19 {
+    position: absolute;
+    top: 281px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-20 {
+    position: absolute;
+    top: 296px;
+    left: 19px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-21 {
+    position: absolute;
+    top: 11px;
+    left: 34px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-22 {
+    position: absolute;
+    top: 11px;
+    left: 49px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-23 {
+    position: absolute;
+    top: 11px;
+    left: 64px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-24 {
+    position: absolute;
+    top: 11px;
+    left: 79px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-25 {
+    position: absolute;
+    top: 11px;
+    left: 94px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-26 {
+    position: absolute;
+    top: 26px;
+    left: 109px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-27 {
+    position: absolute;
+    top: 41px;
+    left: 124px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-28 {
+    position: absolute;
+    top: 56px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-29 {
+    position: absolute;
+    top: 71px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-30 {
+    position: absolute;
+    top: 86px;
+    left: 124px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-31 {
+    position: absolute;
+    top: 101px;
+    left: 109px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-32 {
+    position: absolute;
+    top: 116px;
+    left: 94px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-33 {
+    position: absolute;
+    top: 116px;
+    left: 79px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-34 {
+    position: absolute;
+    top: 116px;
+    left: 64px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-35 {
+    position: absolute;
+    top: 116px;
+    left: 49px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-36 {
+    position: absolute;
+    top: 116px;
+    left: 34px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-37 {
+    position: absolute;
+    top: 131px;
+    left: 109px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-38 {
+    position: absolute;
+    top: 146px;
+    left: 124px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-39 {
+    position: absolute;
+    top: 161px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-40 {
+    position: absolute;
+    top: 176px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-41 {
+    position: absolute;
+    top: 191px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-42 {
+    position: absolute;
+    top: 206px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-43 {
+    position: absolute;
+    top: 221px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-44 {
+    position: absolute;
+    top: 236px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-45 {
+    position: absolute;
+    top: 251px;
+    left: 139px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-46 {
+    position: absolute;
+    top: 266px;
+    left: 124px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-47 {
+    position: absolute;
+    top: 281px;
+    left: 109px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-48 {
+    position: absolute;
+    top: 296px;
+    left: 94px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-49 {
+    position: absolute;
+    top: 296px;
+    left: 79px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-50 {
+    position: absolute;
+    top: 296px;
+    left: 64px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-51 {
+    position: absolute;
+    top: 296px;
+    left: 49px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+.square-52 {
+    position: absolute;
+    top: 296px;
+    left: 34px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px blue;
+}
+
+#b-2 {
+/*    border: solid 0.1px black;*/
+    width:195px;
+    height: 330px;
+    position: relative;
+    top: -135px;
+    left: 300px
+}
+
+[class^="second-"] {
+    background-color: red;
+/*    border: solid 1px blue;*/
+}
+
+.second-circle1 {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: solid 1.5px blue;
+    position: absolute;
+}
+
+.second-circle2 {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    border: solid 1.5px blue;
+    position: absolute;
+    top: 120px ;
+}
+
+#b-3 {
+/*    border: solid 0.1px black;*/
+    width:195px;
+    height: 330px;
+    position: relative;
+    top: -465px;
+    left: 570px
+}
+
+[class^="rectangle-"] {
+    background-color: red;
+}
+
+.rectangle-1 {
+      width:15px;
+      height: 105px;
+      position: absolute;
+      border: solid 1px blue;
+      transform: rotate(-45deg);
+      transform-origin: top left;
+      top: 15px;
+      left:15px;      
+}
+
+.rectangle-2 {
+      width:15px;
+      height: 120px;
+      position: absolute;
+      transform: rotate(45deg);
+      transform-origin: top left;
+      border: solid 1px blue;
+      top: 80px;
+      left:100px;      
+}
+
+.rectangle-3 {
+      width:15px;
+      height: 285px;
+      position: absolute; 
+      border: solid 1px blue;  
+}
+
+.rectangle-4 {
+      width:150px;
+      height: 15px;
+      position: absolute; 
+      border: solid 1px blue; 
+      top: 165px;
+      left:15px;  
+}
+
+.rectangle-5 {
+      width:150px;
+      height: 15px;
+      position: absolute; 
+      border: solid 1px blue; 
+      top: 285px;
+      left:15px;  
+}
+
+.rectangle-6 {
+      width:15px;
+      height: 105px;
+      position: absolute; 
+      border: solid 1px blue; 
+      top: 180px;
+      left:165px;  
+}
+
+#b-4 {
+/*    border: solid 0.1px black;*/
+    width:195px;
+    height: 300px;
+    position: relative;
+    top: -795px;
+    left: 840px
+}
+
+[class^="rounded-"] {
+    background-color: red;
+}
+
+.rounded-1 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 0.5px blue;
+    position: absolute;
+}
+
+.rounded-2 {
+    height: 210px;
+    width: 15px;
+    top:15px;
+    border: solid 0.5px blue;
+    border-radius:8px;
+    position: absolute;
+}
+
+.rounded-3 {
+    height: 15px;
+    width: 120px;
+    top:0px;
+    left:15px;
+    border: solid 0.5px blue;
+    border-radius:8px;
+    position: absolute;
+}
+
+.rounded-4 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:120px;
+    top: 15px;
+}
+
+.rounded-5 {
+    height: 90px;
+    width: 15px;
+    border-radius:8px;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:120px;
+    top: 30px;
+}
+
+.rounded-6 {
+    height: 90px;
+    width: 15px;
+    border-radius:8px;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:120px;
+    top: 120px;
+}
+
+.rounded-7 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:120px;
+    top: 210px;
+}
+
+.rounded-8 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:0px;
+    top: 225px;
+}
+
+.rounded-9 {
+    height: 15px;
+    width: 105px;
+    border-radius:8px;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:15px;
+    top: 225px;
+}
+
+.rounded-10 {
+    height: 15px;
+    width: 165px;
+    border-radius:8px;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:15px;
+    top: 285px;
+}
+
+.rounded-11 {
+    height: 45px;
+    width: 15px;
+    border-radius:8px;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:0px;
+    top: 240px;
+}
+
+.rounded-12 {
+    height: 45px;
+    width: 15px;
+    border-radius:8px;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:180px;
+    top: 240px;
+}
+
+.rounded-13 {
+    height: 15px;
+    width: 60px;
+    border-radius:8px;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:120px;
+    top: 225px;
+}
+
+.rounded-14 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:180px;
+    top: 225px;
+}
+
+.rounded-15 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:180px;
+    top: 285px;
+}
+
+.rounded-16 {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 0.5px blue;
+    position: absolute;
+    left:0px;
+    top: 285px;
+}
+
+
+#b-5 {
+/*    border: solid 0.1px black;*/
+    width:225px;
+    height: 300px;
+    position: relative;
+    top: -1095px;
+    left: 1110px
+}
+
+[class^="big-"] {
+    background-color: red;
+}
+
+.big-1 {
+    width:150px;
+    height: 150px;  
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: solid 1.5px blue;
+    border-radius: 40px;
+    }
+
+.big-2 {
+    width:150px;
+    height: 150px;  
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    border: solid 1.5px blue;
+    border-radius: 40px;
+    }
+
+.big-3 {
+    width:75px;
+    height: 75px;  
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    border: solid 1.5px blue;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 40px;
+    }
+
+.big-4 {
+    width:75px;
+    height: 75px;  
+    position: absolute;
+    top: 75px;
+    left: 150px;
+    border: solid 1.5px blue;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 15px;
+    }
+
+.big-5 {
+    width:75px;
+    height: 75px;  
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    border: solid 1.5px blue;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 40px;
+    }
+
+    .big-6 {
+    width:75px;
+    height: 75px;  
+    position: absolute;
+    top: 225px;
+    left: 150px;
+    border: solid 1.5px blue;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 15px;
+    }

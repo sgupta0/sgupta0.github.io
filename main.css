@@ -31,6 +31,7 @@ body {
 	  padding-right:8%;
 	  padding-left: 3%;
 	  width: 100%;
+/*	  overflow-y: scroll;*/
 
 }
 
@@ -40,7 +41,9 @@ body {
 	width:100%;
     height: auto;
     padding-left:0;
+/*    overflow-y: scroll;*/
 }
+
 .leftbox img{
 	padding-top:18px;
 	width:100%;
@@ -137,6 +140,8 @@ background-color: black;
         .menu-bar a:hover {
             color: red; 
         }
+
+
 
        
 #underline {
