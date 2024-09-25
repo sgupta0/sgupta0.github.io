@@ -42,6 +42,8 @@ body {
     height: auto;
     padding-left:0;
 /*    overflow-y: scroll;*/
+position: relative;
+    display: inline-block;
 }
 
 .leftbox img{
@@ -69,7 +71,7 @@ h1 {
 	left: 0;
 	top: 0;
 	font-size: 20px;
-	border: 1px solid #ccc;
+	border: 1px solid #ccc;5
     padding: 20px;
     text-decoration: none;
     width: 47%;
@@ -150,7 +152,31 @@ background-color: black;
 	text-underline-offset: 3px;
 }
 
+.popup-text {
+    display: none;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-10%);
+    transform: translateY(100%);
+    border-top: 12px solid blue;
+    border-left:1px solid black ;
+    border-right:1px solid black ;
+    border-bottom:1px solid black ;
+    color: black;
+    font-family: monospace;
+    padding: 5px;
+    z-index: 10000;
+    font-size: 10px;
+    line-height: 8px;
+    background-color: darkgrey;
+    opacity: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
 
+.leftbox:hover .popup-text {
+    display: block;
+}
 
 /*.container{
 display: flex;
