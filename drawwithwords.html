@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Sketch</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <script>
+        let myText = ['girl', 'its', 'so', 'confusing', 'sometimes', 'to', 'be', 'a','girl', 'girl', 'girl', 'girl', 'girl','girl', 'its', 'so', 'confusing', 'sometimes', 'to', 'be', 'a','girl', 'girl', 'girl', 'girl', 'girl', 'girl', 'how', 'do', 'you', 'feel', 'being', 'a', 'girl', 'girl', 'girl', 'girl','how', 'do', 'you', 'feel', 'being', 'a', 'girl', 'girl', 'girl', 'girl', 'man', 'i', 'dont', 'know', 'im', 'just', 'a', 'girl', 'girl', 'girl', 'girl', 'girl', 'Yeah', 'I', 'dont', 
+            'know', 'if', 'you', 'like', 'me','Sometimes', 'I', 'think',
+            'you', 'might', 'hate', 'me', 'Sometimes', 'I', 'think', 'I'
+            , 'might', 'hate', 'you','Maybe', 'you', 'just', 'wanna', 'be', 'me', 'You', 'always', 'say', 'Lets', 'go', 'out', 'So', 'we', 'go', 'eat', 'at', 'a', 'restaurant', 'Sometimes', 'it', 'feels', 'a', 'bit', 'awkward', 'Cause', 'we', 'dont', 'have', 'much', 'in', 'common','People', 'say', 'were', 'alike', 'They', 'say', 'weve', 'got', 'the', 'same', 'hair', 'We', 'talk', 'about', 'making', 'music', 'But', 'I', 'dont', 'know', 'if', 'its', 'honest','Cant', 'tell', 'if', 'you', 'wanna', 'see', 'me', 'Falling', 'over', 'and', 'failing', 'And', 'you', 'cant', 'tell', 'what', 'youre', 'feeling', 'I', 'think', 'I', 'know', 'how', 'you', 'feel','girl', 'its', 'so', 'confusing', 'sometimes', 'to', 'be', 'a','girl', 'girl', 'girl', 'girl', 'girl','girl', 'its', 'so', 'confusing', 'sometimes', 'to', 'be', 'a','girl', 'girl', 'girl', 'girl', 'girl', 'girl', 'how', 'do', 'you', 'feel', 'being', 'a', 'girl', 'girl', 'girl', 'girl','how', 'do', 'you', 'feel', 'being', 'a', 'girl', 'girl', 'girl', 'girl', 'man', 'i', 'dont', 'know', 'im', 'just', 'a', 'girl', 'girl', 'girl', 'girl', 'girl', 'youre', 'all', 'about', 'writing', 'poems', 'but', 'im', 'about', 'throwing', 'parties', 'think', 'you', 'should', 'come', 'to', 'my', 'party', 'and', 'put', 'your', 'hands', 'up', 'i', 'think', 'were', 'totally', 'different', 'but', 'opposites', 'do', 'attract', 'maybe', 'were', 'so', 'meant', 'to', 'be', 'just', 'you', 'and', 'me', 'cause', 'people', 'say', 'were', 'alike', 'they', 'say', 'weve', 'got', 'the', 'same', 'hair', 'one', 'day', 'we', 'might', 'make', 'some', 'music', 'the', 'internet', 'would', 'go', 'crazy', 'but', 'you', 'might', 'still', 'wanna', 'see', 'me', 'falling', 'over', 'and', 'failing', 'atleast', 'were', 'closer', 'to', 'being', 'on','the', 'same', 'page', 'girl', 'its', 'so', 'confusing', 'sometimes', 'to', 'be', 'a','girl', 'girl', 'girl', 'girl', 'girl','girl', 'its', 'so', 'confusing', 'sometimes', 'to', 'be', 'a','girl', 'girl', 'girl', 'girl', 'girl', 'girl', 'how', 'do', 'you', 'feel', 'being', 'a', 'girl', 'girl', 'girl', 'girl','how', 'do', 'you', 'feel', 'being', 'a', 'girl', 'girl', 'girl', 'girl', 'man', 'i', 'dont', 'know', 'im', 'just', 'a', 'girl', 'girl', 'girl', 'girl', 'girl'];
+var bubbles = [];
+
+function setup() {
+   background(255, 255, 255);
+  createCanvas(windowWidth, windowHeight);
+}
+
+function mouseDragged() {
+  bubbles.push(new Bubble(mouseX, mouseY));
+}
+
+function draw() {
+  fill(0);
+  // text('click and drag', 20, 20);
+  for (var i = 0; i < bubbles.length; i++) {
+    bubbles[i].display();
+  }
+  
+  if (bubbles.length > 8) {
+   bubbles.splice(0, 1);
+   }
+}
+
+function Bubble(x, y) {
+    this.x = x;
+  this.y = y;
+  this.randText = random(myText);
+  this.display = function() {
+    push();
+    fill(0);
+    textSize(11);
+    textFont('helvetica'); 
+    text(this.randText,this.x+10, this.y+10); 
+    pop();
+        //text(myText[index], this.x, this.y);
+    //ellipse(this.x, this.y, 10, 10);
+  }
+}
+
+</script>
+</body>
+</html>

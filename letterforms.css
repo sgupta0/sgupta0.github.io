@@ -874,3 +874,187 @@ body, html {
     border-top-left-radius: 40px;
     border-top-right-radius: 15px;
     }
+
+
+
+#letter-b {
+/*    border: solid 0.1px black;*/
+    width:195px;
+    height: 330px;
+    position: relative;
+    top: 180px;
+    left: 600px
+}
+
+[class^="rectangle-"] {
+    background-color: red;
+}
+
+.rectangle-1 {
+      width:15px;
+      height: 105px;
+      position: absolute;
+      border: solid 1px blue;
+      transform: rotate(-45deg);
+      transform-origin: top left;
+      top: 15px;
+      left:15px; 
+      animation: movieSkew1 3s infinite alternate; 
+      transition-timing-function: ease-in; 
+}
+
+
+@keyframes movieSkew1 {
+  0% {
+/*    color: red;*/
+        transform:translateY(-165px) translateX(400px) rotate(45deg); 
+  }
+  30% {
+/*    color: blue;*/
+        transform:translateY(-180px) translateX(105px) rotate(-45deg);
+  }
+  100% {
+/*    color: red;*/
+    transform:  translateY(0) rotate(-45deg);
+/*    animation: alternate;*/
+  }  
+}
+
+/*.rectangle-1:hover {
+animation:  movieSkew 2s linear infinite alternate ease-in-out;
+        }*/
+
+.rectangle-2 {
+      width:15px;
+      height: 120px;
+      position: absolute;
+      transform: rotate(45deg);
+      transform-origin: top left;
+      border: solid 1px blue;
+      top: 80px;
+      left:100px; 
+      animation: movieSkew2 3s infinite alternate; 
+      transition-timing-function: ease-in;
+}
+
+@keyframes movieSkew2 {
+  0% {
+/*    color: red;*/
+        transform:translateY(140px) translateX(700px) rotate(60deg); 
+  }
+  70% {
+/*    color: blue;*/
+        transform:translateY(500px) translateX(105px) rotate(150deg);
+  }
+  100% {
+/*    color: red;*/
+    transform:  translateY(0) rotate(45deg);
+/*    animation: alternate;*/
+  }  
+}
+
+.rectangle-3 {
+      width:15px;
+      height: 285px;
+      position: absolute; 
+      border: solid 1px blue; 
+      animation: movieSkew3 3s infinite alternate; 
+      transition-timing-function: ease-in; 
+}
+
+@keyframes movieSkew3 {
+  0% {
+/*    color: red;*/
+        transform:translateY(-230px) translateX(650px) rotate(-230deg); 
+  }
+  50% {
+/*    color: blue;*/
+        transform:translateY(-195px) translateX(-500px) rotate(-70deg);
+  }
+  100% {
+/*    color: red;*/
+    transform:  translateY(0) ;
+/*    animation: alternate;*/
+  }  
+}
+
+.rectangle-4 {
+      width:150px;
+      height: 15px;
+      position: absolute; 
+      border: solid 1px blue; 
+      top: 165px;
+      left:15px; 
+      animation: movieSkew4 3s infinite alternate; 
+      transition-timing-function: ease-in;  
+}
+
+@keyframes movieSkew4 {
+  0% {
+/*    color: red;*/
+        transform:translateY(330px) translateX(100px) rotate(-230deg); 
+  }
+  48% {
+/*    color: blue;*/
+        transform:translateY(195px) translateX(200px) rotate(-70deg);
+  }
+  100% {
+/*    color: red;*/
+    transform:  translateY(0) ;
+/*    animation: alternate;*/
+  }  
+}
+
+.rectangle-5 {
+      width:150px;
+      height: 15px;
+      position: absolute; 
+      border: solid 1px blue; 
+      top: 285px;
+      left:15px; 
+      animation: movieSkew5 3s infinite alternate; 
+      transition-timing-function: ease-in;   
+}
+
+@keyframes movieSkew5 {
+  0% {
+/*    color: red;*/
+        transform:translateY(-200px) translateX(200px) rotate(30deg); 
+  }
+  48% {
+/*    color: blue;*/
+        transform:translateY(-400px) translateX(500px) rotate(-330deg);
+  }
+  100% {
+/*    color: red;*/
+    transform:  translateY(0) ;
+/*    animation: alternate;*/
+  }  
+}
+
+.rectangle-6 {
+      width:15px;
+      height: 105px;
+      position: absolute; 
+      border: solid 1px blue; 
+      top: 180px;
+      left:165px;  
+      animation: movieSkew6 3s infinite alternate; 
+      transition-timing-function: ease-in;   
+}
+
+@keyframes movieSkew6 {
+  0% {
+/*    color: red;*/
+        transform:translateY(0px) translateX(-100px) rotate(30deg); 
+  }
+  30% {
+/*    color: blue;*/
+        transform:translateY(0px) translateX(-700px) rotate(-330deg);
+  }
+  100% {
+/*    color: red;*/
+    transform:  translateY(0) ;
+/*    animation: alternate;*/
+  }  
+}
