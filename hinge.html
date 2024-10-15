@@ -1,0 +1,139 @@
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>The App Made to be Deleted</title>
+      <style>
+
+         @font-face {
+            font-family: 'Harber'; /* Name of the font */
+            src: url('fonts/HARBER-Medium.woff') format('woff');
+            font-weight: medium;
+            font-style: normal;
+        }
+          @font-face {
+            font-family: 'Moki'; /* Name of the font */
+            src: url('fonts/Moki-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+       body {
+            margin: 0;
+            font-family: helvetica;
+            z-index: 500;
+
+        }
+        .container {
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+
+        }
+        .row {
+            flex: 1; /* Each row takes equal space */
+            display: flex;
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+            position: relative;
+            border: 1px solid #ccc; /* Optional border */
+        }
+
+        .outlined-text {
+            font-size: 250px;
+            letter-spacing: -5px;
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000; /* Outline effect */
+            margin: 0px;
+            transform: scaleX(0.8) scaleY(1.4);
+          }
+
+        .row1 {
+            background-color: white; /* Color for the first row */
+        }
+
+        .row1 h1 {
+          color: white;
+        }
+        .row2 {
+            background-color: #CFD0D2; /* Color for the second row */
+        }
+
+        .row2 h1 {
+          color: white;
+          letter-spacing: -10px;
+        }
+
+        .row1 h1:hover {
+            color: white; 
+
+        }
+        .row2 h1:hover {
+            color: #CFD0D2;
+        }
+
+  .row2 h1 a {
+  color: #CFD0D2;
+  text-decoration: none;
+  font-style: regular;
+  }
+
+ .row2 a:hover {
+  color: #CFD0D2;
+  font-style: regular;
+/*  font-weight: 300;*/
+  text-shadow: 
+                1px 1px 0 rgba(255, 105, 180, 0.7),
+                5px 5px 5px rgba(255, 105, 180, 0.7),
+                1px -1px 0 rgba(255, 105, 180, 0.7),
+                -1px 1px 0 rgba(255, 105, 180, 0.7);
+}  
+
+.row1 h1 a {
+  color: white;
+  text-decoration: none;
+  font-style: regular;
+  }
+
+ .row1 a:hover {
+  color: white;
+  font-style: regular;
+/*  font-weight: 300;*/
+ text-shadow: 
+                1px 1px 0 rgba(255, 105, 180, 0.7),
+                5px 5px 5px rgba(255, 105, 180, 0.7),
+                1px -1px 0 rgba(255, 105, 180, 0.7),
+                -1px 1px 0 rgba(255, 105, 180, 0.7);
+}  
+
+ .slanted {
+            font-style: italic; 
+            display: inline-block; 
+            font-family: helvetica;
+            font-size: 250px;
+        }
+
+  .letterE { 
+            font-family: helvetica;
+            font-size: 250px;
+        }
+
+    </style>
+    </head>
+    <body>
+     <div class="container">
+        <div class="row row1">
+            <h1 class="outlined-text"><a href="hinge3.html">HING<span class="letterE">E</span></a></h1>
+        </div>
+        <div class="row row2">
+            <h1 class="outlined-text"><a href="hinge2.html"><span class="slanted">UN</span>HING<span class="letterE">E</span><span class="slanted">D</span></a></h1>
+        </div>
+    </div>
+
+</body>
+</html>
