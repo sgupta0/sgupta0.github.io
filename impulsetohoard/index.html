@@ -1,0 +1,92 @@
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>On the Impulse to hoard and organise</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+      <link rel="stylesheet" href="style.css">
+    <style>
+      </style>
+  </head>
+  <body>
+    <div class="menu">
+        about organise
+    </div>
+    <div class="container"></div>
+     <script>
+      
+       let images = []; // Array to hold image objects
+let draggingIndex = -1; // Index of the currently dragged image
+let paths = []; // Array to store paths for each image
+const numImages = 4; // Adjust this based on imageNames length
+const imageNames = [
+    './assets/image1.png',
+    './assets/image2.png',
+    './assets/image3.png',
+    './assets/image4.png'
+];
+
+     function preload() {
+          for (let i = 0; i < numImages; i++) {
+              images[i] = loadImage(imageNames[i]);
+              // Set random initial positions for the images
+              paths[i] = { position: createVector(random(0, windowWidth - 50), random(0, windowHeight - 50)), path: [] };
+          }
+      }
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+    background(0);
+
+    // Draw paths for each image
+    stroke(255);
+    strokeWeight(30);
+    for (let i = 0; i < numImages; i++) {
+        if (paths[i].path.length > 0) {
+            beginShape();
+            for (let p of paths[i].path) {
+                vertex(p.x, p.y);
+            }
+            endShape();
+        }
+
+        // Draw the image
+        image(images[i], paths[i].position.x, paths[i].position.y, 50, 50);
+    }
+}
+
+function mousePressed() {
+    for (let i = 0; i < numImages; i++) {
+        let posX = paths[i].position.x;
+        let posY = paths[i].position.y;
+        if (mouseX > posX && mouseX < posX + 50 &&
+            mouseY > posY && mouseY < posY + 50) {
+            draggingIndex = i; // Set dragging index to the current image
+            break;
+        }
+    }
+}
+
+function mouseDragged() {
+    if (draggingIndex !== -1) {
+        paths[draggingIndex].path.push(createVector(mouseX, mouseY)); // Store mouse position
+        paths[draggingIndex].position.set(constrain(mouseX - 25, 0, width - 50), 
+                                            constrain(mouseY - 25, 0, height - 50)); // Update position
+    }
+}
+
+function mouseReleased() {
+    draggingIndex = -1; // Stop dragging
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight); // Resize canvas on window resize
+}
+
+    </script>
+
+  </body>
+  </html>
