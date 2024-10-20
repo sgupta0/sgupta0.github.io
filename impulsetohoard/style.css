@@ -97,7 +97,7 @@ body, html {
             color: yellow; /* Text color */
             opacity: 0; /* Start hidden */
             transition: opacity 0.3s ease; /* Smooth transition for text visibility */
-            font-family: helvetica;
+            font-family: arial narrow;
             font-size: 12px;
         }
 
