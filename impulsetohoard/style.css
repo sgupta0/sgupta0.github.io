@@ -10,7 +10,10 @@ body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, #d8d9da 8%, #c19eb0 16%, #dd4491 32%, #dc2374 48%, #ff97ff 96%, #eeff00 99%);
+    background: linear-gradient(to bottom, #d8d9da 8%, #c19eb0 16%, #dd4491 32%, #dc2374 48%, #ff97ff 92%, #eeff00 99%);
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-size: cover; /* Ensures the background covers the entire area */
+    background-repeat: no-repeat; /* Prevents repeating the gradient */
 }
 
 .menu {
@@ -22,7 +25,7 @@ body, html {
             padding: 10px;
             text-align: right;
             z-index: 1000; /* Ensure it's on top */
-            font-size: 30px;
+            font-size: 40px;
             font-family: Nudles;
             z-index: 1000;
         }
@@ -37,10 +40,25 @@ body, html {
             justify-content: space-between;
             align-items: center;
             z-index: 1000; /* Ensure it's on top */
-            font-size: 30px;
+            font-size: 40px;
             font-family: Nudles;
             width: 100%;
+            display: flex;
         }
+
+        .menu2 span {
+    margin: 0 15px; 
+}
+
+.left-items {
+    display: flex; /* Create a flex container for left items */
+    flex-grow: 1; /* Allow this section to grow */
+}
+
+.right-item {
+    margin-left: auto; 
+     padding-right: 20px;
+}
 
 .container2 {
             display: grid;
@@ -51,12 +69,42 @@ body, html {
             padding: 80px;
         }
 
+
+.image-wrapper {
+            position: relative; /* Position relative for absolute positioning of text */
+            overflow: hidden; /* Hide overflow */
+        }
+
 .container2 img {
     width: 100%;
     height: auto;
     max-height: 100px;
     object-fit: contain;
-
+    transition: opacity 0.3s ease;
 
 }
-   
+  
+.image-text {
+            position: absolute; /* Position text over the image */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: left;
+/*            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: yellow; /* Text color */
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+            font-family: helvetica;
+            font-size: 12px;
+        }
+
+       .image-wrapper:hover .image-text {
+            opacity: 1; 
+        }
+
+        .image-wrapper:hover img {
+            opacity: 0; 
+        }

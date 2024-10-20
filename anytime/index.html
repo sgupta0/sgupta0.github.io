@@ -1,0 +1,44 @@
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>anytime</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let img;
+
+        function preload() {
+            // Load the image
+            img = loadImage("./assets/image1.html");
+        }
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            background(255);
+            imageMode(CENTER);
+        }
+
+        function draw() {
+            // Clear the background to avoid trail effect
+            background(0);
+            
+            // Draw a border around the image
+            stroke(255); // White border
+            strokeWeight(4);
+            noFill();
+            rect(mouseX - 50, mouseY - 50, 100, 100); // Adjust according to image size
+            
+            // Draw the image at the mouse position
+            image(img, mouseX, mouseY, 100, 100);
+        }
+    </script>
+</body>
+</html>
