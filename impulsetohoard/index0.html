@@ -1,0 +1,57 @@
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>On the Impulse to hoard and organise</title>
+      <link rel="stylesheet" href="style.css">
+    <style>
+       body {
+            margin: 0;
+/*            height: 100vh;*/
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: justify;
+            font-family: Nudles2, sans-serif;
+            color: white;
+            font-size: 80px;
+            transition: background 1s ease; /* Smooth transition */
+        }
+
+        .h1 {
+          display: flex;
+          padding: 50px;
+          justify-content: space-between;
+          text-align: center;
+          align-items: flex-end;
+          font-display: ;
+        }
+
+        h1 a {
+          text-decoration: none;
+          color: white;
+          line-height: 200px;
+        }
+        
+      </style>
+  </head>
+  <body>
+    <h1><a href="index.html">on the impulse<br> to hoard* <br>*and organise</a></h1>
+  </body>
+  <script>
+        function getRandomGradient() {
+            const colors = [
+                '#b6b7ba', '#00ff00', '#ffedff', '#ffffff',
+                '#57d8ff', '#00ffff', '#eeff00', '#79c474',
+                '#00a6ff', '#dc2373', '#ff872c', '#005c99'
+            ];
+            const color1 = colors[Math.floor(Math.random() * colors.length)];
+            const color2 = colors[Math.floor(Math.random() * colors.length)];
+            const color3 = colors[Math.floor(Math.random() * colors.length)];
+            const color4 = colors[Math.floor(Math.random() * colors.length)];
+            return `linear-gradient(to bottom, ${color1}, ${color2}, ${color3}, ${color4})`;
+        }
+
+        document.body.style.background = getRandomGradient();
+    </script>
+  </html>

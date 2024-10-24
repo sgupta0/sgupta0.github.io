@@ -1,63 +1,89 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>On the Impulse to hoard and organise</title>
      <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
       <link rel="stylesheet" href="style.css">
     <style>
+        .menu {
+            padding-top: 10px;
+        }
       </style>
   </head>
   <body>
     <div class="menu">
-        about organise
+        <span><a href="index10about.html">about</a></span>
+        <span> <a href="index2.html">organise</a></span>
     </div>
     <div class="container"></div>
      <script>
+        let images = []; // Array to hold image objects
+        let positions = []; // Array to hold positions of images
+        let paths = []; // Array to store paths for each image
+        let draggingIndex = -1; // Index of the currently dragged image
 
-       let images = []; // Array to hold image objects
-let draggingIndex = -1; // Index of the currently dragged image
-let paths = []; // Array to store paths for each image
-
-
-     function preload() {
+        function preload() {
             // Load images into the array
-            images.push(loadImage('./assets/image1.png')); // Replace with your image URLs
-            images.push(loadImage('./assets/image2.png')); // Add more images
-            images.push(loadImage('./assets/image3.png'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image1.png?v=1729391946073'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image2.png?v=1729391950766'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image3.png?v=1729391954387'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image4.png?v=1729393703463'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image5.png?v=1729616918473'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image6.png?v=1729619573138'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image7.png?v=1729619610908'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image8.png?v=1729619636002'));
+             images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image9.png?v=1729619682875'));
+              images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image10.png?v=1729619688300'));
+              images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image11.png?v=1729623736412'));
+            // Add more images as needed
         }
 
-
-function setup() {
-    createCanvas(windowWidth, windowHeight);
-    for (let i = 0; i < images.length; i++) {
-                positions.push(createVector(50 + i * 60, 50)); // Offset positions for each image
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            // Initialize positions and paths for each image
+             for (let i = 0; i < images.length; i++) {
+                let x = random(0, width - 50); // Random x position within the canvas width
+                let y = random(0, height - 50); // Random y position within the canvas height
+                positions.push(createVector(x, y)); // Set random position for each image
                 paths.push([]); // Initialize empty paths
             }
-}
+        }
 
+        function draw() {
+            drawGradient(); // Call the gradient function
 
-function draw() {
-    // background(255);
+ let fixedHeight = 50;
 
-    // Draw paths for each image
- for (let i = 0; i < images.length; i++) {
+            // Draw each image and its path
+            for (let i = 0; i < images.length; i++) {
                 // Draw the path
                 stroke(255); // Set path color to white
-                strokeWeight(20); // Set stroke weight for the path
+                strokeWeight(30); // Set stroke weight for the path
                 noFill();
                 beginShape();
                 for (let p of paths[i]) {
                     vertex(p.x, p.y);
                 }
                 endShape();
+                   let imgWidth = (fixedHeight * images[i].width) / images[i].height; // Calculate width based on aspect ratio
 
-                // Draw the image
-                image(images[i], positions[i].x, positions[i].y, 50, 50); // Draw each image
+        // Draw the image
+        image(images[i], positions[i].x, positions[i].y, imgWidth, fixedHeight); // Draw each image
+
             }
         }
 
- function mousePressed() {
+        function drawGradient() {
+            for (let i = 0; i <= height; i++) {
+                let inter = map(i, 0, height, 0, 1); // Normalize the value to between 0 and 1
+                let c = lerpColor(color(0xD8, 0xD9, 0xDA), color(0xEE, 0xFF, 0x00), inter); // Define your gradient colors
+                stroke(c);
+                line(0, i, width, i); // Draw a line across the canvas at this height
+            }
+        }
+
+        function mousePressed() {
             // Check if mouse is over any image
             for (let i = 0; i < images.length; i++) {
                 if (mouseX > positions[i].x && mouseX < positions[i].x + 50 &&
@@ -80,7 +106,6 @@ function draw() {
         function mouseReleased() {
             draggingIndex = -1; // Stop dragging
         }
-
     </script>
 
   </body>

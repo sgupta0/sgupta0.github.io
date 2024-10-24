@@ -4,6 +4,12 @@
             font-style: normal;
         }
 
+    @font-face {
+        font-family: 'Nudles2';
+         src: url('fonts/Nudles-Bold.woff') format('woff');
+         font-style: normal;
+    }
+
 body, html {
     height: 100%;
     font-family: Nudles;
@@ -22,13 +28,30 @@ body, html {
             left: 0;
             right: 0;
             color: yellow;
-            padding: 10px;
+            padding-top: 20px;
+            padding-right: 40px;
             text-align: right;
             z-index: 1000; /* Ensure it's on top */
-            font-size: 40px;
+            font-size: 30px;
+            width: 100%;
             font-family: Nudles;
             z-index: 1000;
         }
+
+
+.menu a {
+    color: yellow;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.menu span {
+    margin: 0 10px;
+}
 
 .menu2 {
             position: fixed;
@@ -40,7 +63,7 @@ body, html {
             justify-content: space-between;
             align-items: center;
             z-index: 1000; /* Ensure it's on top */
-            font-size: 40px;
+            font-size: 30px;
             font-family: Nudles;
             width: 100%;
             display: flex;
@@ -53,11 +76,29 @@ body, html {
 .left-items {
     display: flex; /* Create a flex container for left items */
     flex-grow: 1; /* Allow this section to grow */
+    color: yellow;
+    text-decoration: none;
 }
 
 .right-item {
     margin-left: auto; 
      padding-right: 20px;
+     color: yellow;
+}
+
+.right-item a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.left-items a {
+   text-decoration: none;
+    color: yellow;  
+}
+
+.menu2 a:hover{
+    color: white;
+    text-decoration: none;
 }
 
 .container2 {
@@ -108,3 +149,92 @@ body, html {
         .image-wrapper:hover img {
             opacity: 0; 
         }
+
+
+.color-menu {
+    position: fixed; /* Fix the menu to the bottom */
+    bottom: 15px; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    color: white; /* Text color */
+    text-align: left; /* Center the text */
+    padding-left: 10px;
+    font-size: 40px;
+}
+
+.color-menu ul {
+   list-style: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.color-menu li {
+  display: inline; /* Align list items in a row */
+    margin: 0 20px; /* Space between items */
+}
+
+.color-menu a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 40px; /* Font size */
+}
+
+.color-menu a:hover {
+    text-decoration: none; /* Underline on hover */
+    color: yellow;
+}
+
+.container3{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create 10 equal columns */
+    gap: 10px; /* Space between grid items */
+    margin-top: 50px;
+            padding-top: 200px; /* Space for fixed menu */
+            padding: 80px;
+            justify-content: center;
+}
+
+.container3 img {
+    width: 20%; /* Make the image fill the width of the container */
+    height: auto; /* Maintain aspect ratio for height */
+    display: block; /* Remove bottom space under images */
+    transition: opacity 0.3s ease;
+    object-fit: contain;
+    justify-content: center;
+
+
+}
+
+.grid-container {
+    margin-top: 50px;
+            padding-top: 200px; /* Space for fixed menu */
+            padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+/*    gap: 10px;*/
+    border: 1 px solid yellow;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Align items to the top */
+}
+
+.grid-item.left {
+    border-right: 1px solid yellow; /* Border between columns */
+    padding-right: 10px; /* Space between images and border */
+}
+
+
+.grid-item.left img {
+    width: 10%; /* Adjust width for smaller images */
+    height: auto; /* Maintain aspect ratio */
+    padding-right: 30px;
+}
+
+.grid-item.right img {
+    width: 100%; /* Full width for larger images */
+    height: auto; /* Maintain aspect ratio */
+    padding-left: 30px;
+}

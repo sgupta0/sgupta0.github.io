@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
@@ -9,59 +10,43 @@
             margin: 0;
             padding: 0;
             height: 100%; /* Full height for the body */
-            font-family: sans-serif;
+            font-family: arial;
+            overflow: scroll;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+           .dark-mode {
             background-color: black;
-            overflow: hidden;
+            color: yellow;
         }
 
-        .intro {
-            background-color: black; /* Replace with your image URL */
-            background-size: cover; /* Cover the entire container */
-            background-position: center; /* Center the background */
-            height: 100vh; /* Full viewport height */
-            display: flex; /* Use flexbox for centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            position: relative; /* Position for the title */
-            color: red; /* Text color */
-            overflow: hidden;
+        .light-mode {
+            background-color: white;
+            color: darkgray;
         }
 
-        .intro h1 {
-            font-size: 250px; /* Large font size */
-            line-height: 210px;
-            text-align: center; /* Center the title */
-            text-color: red;
-            margin: 0; /* Remove default margin */
-            z-index: 1000;
-            font-style: italic;
+
+  #toggle-button {
+            background-color: yellow; /* Button color */
+            border: none;
+/*            padding: 5px 10px;*/
+            cursor: pointer;
+            font-family: arial narrow;
+            font-size: 16PX;
+            color: slategrey;
         }
+
 
 .contents {
-   background-color: black; /* Replace with your image URL */
-           /* background-size: cover; 
-            background-position: center; */
-            height: 100%; /* Full viewport height */
-            width: 100%;
-            position: absolute;
-/*            display: flex; */
-            justify-content: left; /* Center horizontally */
-            align-items: center; /* Center vertically */
-/*            position: relative; */
-            color: lightblue; /* Text color */
-            overflow-y: hidden;
-            left:70px;
-            top:30px;
-            line-height: 30px;
-            font-size: 18px;
-/*            font-style: italic;*/
-            text-decoration: underline;
-            text-decoration-color: whitesmoke;
-  text-underline-offset: 15px;
+ display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 8 equal columns */
 
-
-/*            font-style: italic;*/
-/*            font-weight: 200;*/
+/*            gap: 8px;*/
+            margin-top: 10px;
+            padding-top: 28px; /* Space for fixed menu */
+/*            padding:10px;*/
+            border: 1 px solid yellow;
+            overflow: scroll;
 
 }
 
@@ -70,79 +55,199 @@
    .contents a {
   color: lightblue;
   text-decoration: none;
-  font-style: regular;
-  font-style: italic;
+  font-family: arial narrow;
 /*  font-weight: 300;*/
 }
 
 .contents a:hover {
-  color: red;
+  color: yellow;
   font-style: italic;
 /*  font-weight: 300;*/
 }     
 
-#lines {
-   display: inline-block; 
-            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-            
-            width: 90%; 
-            padding-bottom: 22px;
+
+.menu {
+   position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: slategrey;
+             justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            padding-bottom: 7px;
+/*            text-align: left;*/
+            z-index: 1000; /* Ensure it's on top */
+            font-size: 16px;
+            width: 100%;
+            display: flex;
+            font-family: arial narrow;
+            border-bottom:1px solid yellow;
 }
+
+
+.menu span {
+    margin: 0 10px;
+}
+
+
+.menu a {
+text-decoration: none;
+font-style: normal;
+color: slategrey;
+}
+
+
+.left{
+    flex-grow: 1; /* Allow this section to grow */
+    color: slategrey;
+    text-decoration: none;
+}
+
+.left a:hover{
+    color: slategrey;
+    font-style: italic;
+}
+
+
+.right{
+    margin-left: auto; 
+     padding-right: 10px;
+     color: slategrey;
+}
+
+            
+
+.contents p {
+            border: 1px solid yellow; /* Horizontal and vertical lines */
+            margin: 0; /* Remove default margins */
+            padding: 10px; 
+            position: relative; /* For proper layering */
+        }
+
+          .contents p:not(:nth-child(2n)) {
+            border-right: none; /* Remove right border from every odd item */
+        }
+
+        .contents p:not(:nth-last-child(-n+2)) {
+            border-bottom: none; /* Remove bottom border from last row */
+        }
+
+        .contents iframe {
+    width: 100%; /* Full width of the cell */
+    height: 400px; /* Set a height for the preview */
+    border: none; /* Remove default border */
+    display: block; /* Make it a block element */
+    margin: 0; /* Remove margin */
+    transition: transform 0.3s; /* Optional: Add a transition effect */
+    box-sizing: border-box;
+
+}
+
+.cell {
+    position: relative; /* Required for absolute positioning of text */
+    overflow: hidden; /* Ensures text doesn't overflow */
+}
+
+.cell iframe {
+    width: 100%;
+    height: 400px; /* Match the cell height */
+    border: none; /* Remove border */
+    display: block; /* Make it a block element */
+    margin: 0; /* Remove margin */
+    box-sizing: border-box; /* Ensure padding is included in height */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.text {
+    position: absolute; /* Position text over the iframe */
+    bottom: 200px; /* Adjust as needed */
+    left: 100px; /* Adjust as needed */
+    color: yellow; /* Text color */
+    background-color: rgba(200, 200, 200, 1); /* Semi-transparent background */
+    padding: 5px; /* Padding around text */
+    display: none; /* Hide by default */
+    font-family: arial narrow;
+    border: 1px solid black;
+    font-size: 16px;
+}
+
+.cell:hover .text {
+    display: block; /* Show on hover */
+    opacity: 1;
+}
+
+.cell a {
+    display: block; /* Make the anchor a block element */
+    height: 100%; /* Make sure it fills the cell */
+    text-decoration: none; /* Remove underline from the link */
+/*    color: inherit; /* Inherit color from the parent */*/
+}
+
+
+
+
 
     </style>
   </head>
 
-  <body>
-     <div class="intro">
-        <!-- <div class="overlay"></div> -->
-        <h1>WEB AS MEDIUM</h1>
+<body class="dark-mode"> <!-- Start in dark mode -->
+     
+     <div class="menu">
+      <div class="left">
+        <span><a href="https://mkim.netlify.app/wam1f24/">WEB AS MEDIUM</a></span>
+        <span><a href="https://sejalgupta.com/">SEJAL</a></span>
+      </div>
+       <span class="right">
+         <button id="toggle-button">DARK/LIGHT</button>
+       </span>
     </div>
 
 <div class="contents">
-  <h2>
-    <p> <span id="lines"><a href="./handmade/handmade1.html">1. A Handmade Web</a></span></p>
-    <p> <span id="lines"> <a href="./letterforms.html">2. Letterforms</a> </span></p>
-    <p> <span id="lines"><a href="./letter2.html">3. Animation</a> </span></p>
-    <p> <span id="lines"><a href="./impulsetohoard/index.html">Impulse to hoard </a></span></p>
-    <p> <span id="lines">5. Assignment five</span> </p>
-    <p> <span id="lines">6. Assignment six </span></p>
-    <p> <span id="lines">7. Assignment seven </span></p>
-    <p> <span id="lines">8. Assignment eight </span></p>
+  <div class="cell">
+    <a href="./handmade/handmade1.html" target="_blank">
+     <iframe src="./handmade/handmade1.html" title="Handmade Web"></iframe>
+      <div class="text">HANDMADE WEB</div>
+    </a>
+  </div>
+   <div class="cell">
+    <a href="./letterforms.html" target="_blank">
+      <iframe src="./letterforms.html" title="Letterforms"></iframe>
+      <div class="text">LETTERFORMS</div>
+    </a>
+  </div>
+      <div class="cell">
+        <a href="./impulsetohoard/index0.html" target="_blank">
+            <iframe src="./impulsetohoard/index0.html" title="Impulse to hoard"></iframe>
+            <div class="text">IMPULSE TO HOARD AND ORGANISE</div>
+        </a>
+    </div>
+      <div class="cell">
+      <div class="text">CHANGE OVER TIME<br>COMING SOON</div>  
+    </div>
+   <div class="cell">
+      <div class="text">FIVE</div>  
+    </div>
+     <div class="cell">
+      <div class="text">SIX</div>  
+    </div>
+     <div class="cell">
+      <div class="text">SEVEN</div>  
+    </div>
+     <div class="cell">
+      <div class="text">EIGHT</div>  
+    </div>
+
     
-  </h2>
 </div>
+ <script>
+        document.getElementById('toggle-button').addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 
-
-
-   <!-- <h1> Hello World </h1> -->
-  <!--  <h1 style="font-size: 180px;
-   font-family: sans-serif;
-   color: floralwhite;
-   z-index: 1000;
-   text-align: center;
-   align-items: center;
-   background-color:black;
-   padding-top:200px;
-   margin: none;
-   overflow-x: hidden;
-   overflow-y: hidden;
-   "> WEB AS MEDIUM </h1> -->
-
-
-
-<!-- 
-     <h2 style="font-size: 16px;
-   font-family: sans-serif;
-   color: red;
-   z-index: -10;
-   text-align: left;
-   align-items: left;
-   background-color:black;
-   padding-top:50px;
-   margin: none;
-   overflow-x: hidden;
-   overflow-y: hidden;"><a href="./handmade/handmade1.html">A Handmade Web</a> </h2> -->
-    <!-- <div class="horizontal-line"></div> -->
   </body>
 </html>
 
