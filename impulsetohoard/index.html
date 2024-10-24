@@ -6,12 +6,26 @@
      <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
       <link rel="stylesheet" href="style.css">
     <style>
+
         .menu {
             padding-top: 10px;
         }
+
+
+.cursor {
+    position: absolute;
+    font-size: 16px; /* Adjust the font size as needed */
+    color: rgb(255, 105, 180);
+    pointer-events: none; /* Prevents interference with mouse events */
+    transition: color 0.2s;
+    font-family: arial narrow;
+}
+
       </style>
   </head>
   <body>
+    <div class="custom-cursor-area"></div>
+    <div class="cursor">erase</div>
     <div class="menu">
         <span><a href="index10about.html">about</a></span>
         <span> <a href="index2.html">organise</a></span>
@@ -36,6 +50,70 @@
              images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image9.png?v=1729619682875'));
               images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image10.png?v=1729619688300'));
               images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image11.png?v=1729623736412'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image12.png?v=1729729801773'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image13.png?v=1729730072876'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image14.png?v=1729730078990'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image15.png?v=1729730084896'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image16.png?v=1729730089807'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image17.png?v=1729730182156'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image18.png?v=1729730188399'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image19.png?v=1729730192943'));
+
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image20.png?v=1729730197285'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image21.png?v=1729730201976'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image22.png?v=1729730206683'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image23.png?v=1729730210541'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image24.png?v=1729730215275'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image25.png?v=1729730221403'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image26.png?v=1729730226556'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image27.png?v=1729730230772'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image28.png?v=1729730235756'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image29.png?v=1729730240455'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image30.png?v=1729730249064'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image31.png?v=1729730432210'));
+
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image32.png?v=1729730488906'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image33.png?v=1729730499262'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image34.png?v=1729730503669'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image35.png?v=1729730507564'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image36.png?v=1729730512458'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image37.png?v=1729730517359'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image38.png?v=1729730521783'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image39.png?v=1729730531594'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image40.png?v=1729730536512'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image41.png?v=1729730543208'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image42.png?v=1729730549854'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image43.png?v=1729730556085'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image44.png?v=1729730562472'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image45.png?v=1729730566086'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image46.png?v=1729730573195'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image47.png?v=1729730591393'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image48.png?v=1729730597200'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image49.png?v=1729730603665'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image50.png?v=1729730612675'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image51.png?v=1729730805695'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image52.png?v=1729730810142'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image53.png?v=1729730817117'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image54.png?v=1729730851788'));
+           images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image55.png?v=1729730859585'));
+
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image56.png?v=1729731356709'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image57.png?v=1729731368327'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image58.png?v=1729731379059'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image59.png?v=1729731384151'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image60.png?v=1729731403053'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image61.png?v=1729731421669'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image62.png?v=1729731429738'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image63.png?v=1729731433420'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image64.png?v=1729731438366'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image65.png?v=1729731450970'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image66.png?v=1729731459369'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image68.png?v=1729731464725'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image69.png?v=1729731469149'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image70.png?v=1729731475256'));
+            images.push(loadImage('https://cdn.glitch.global/da315b66-1a2c-4dc5-a9ea-fba27cf58755/image71.png?v=1729731483795'));
+
+
             // Add more images as needed
         }
 
@@ -106,6 +184,24 @@
         function mouseReleased() {
             draggingIndex = -1; // Stop dragging
         }
+
+
+        const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+});
+
+// Change cursor color on hover
+const customCursorArea = document.querySelector('.custom-cursor-area');
+customCursorArea.addEventListener('mouseenter', () => {
+    cursor.style.color = 'blue'; // Change text color on hover
+});
+customCursorArea.addEventListener('mouseleave', () => {
+    cursor.style.color = 'black'; // Revert text color
+});
+
     </script>
 
   </body>

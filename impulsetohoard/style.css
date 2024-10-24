@@ -222,7 +222,6 @@ body, html {
 }
 
 .grid-item.left {
-    border-right: 1px solid yellow; /* Border between columns */
     padding-right: 10px; /* Space between images and border */
 }
 
