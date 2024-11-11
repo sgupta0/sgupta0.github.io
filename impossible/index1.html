@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Text</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/luo2mjr.css">
+
+   <style>
+
+     @font-face {
+            font-family: 'Asfalt'; /* Name of the font */
+            src: url('fonts/ABCAsfalt-Compressed.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+            background-color: black; /* Set background color to contrast the text */
+            cursor: none; /* Hide the default cursor */
+        }
+
+#bouncing-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#bouncing-oval {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%; /* Make it oval */
+    z-index: -1; 
+    height: 50px;
+}
+
+#bouncing-text {
+    font-size: 5em;
+    position: relative;
+    white-space: nowrap;
+    font-weight: regular;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; 
+}
+
+#yes-corners {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.corner-text {
+    position: absolute;
+    font-size: 1em;
+    color: white;
+    z-index: 1000; /* Make sure these texts are above everything else */
+    font-family: "ocr-a-std", monospace;
+font-weight: 400;
+font-style: normal;
+
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.corner-text a {
+     z-index: 1000;
+    color: white; 
+    text-decoration: none; 
+}
+
+.corner-text a:hover {
+    color: white; 
+}
+
+#custom-cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('cursor.gif') no-repeat center center; /* Your custom cursor image */
+            background-size: contain;
+            transform: translate(-50%, -50%); /* Center it around the mouse */
+            animation: rotateCursor 2s linear infinite; /* Continuous rotation */
+        }
+
+
+@keyframes rotateCursor {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+
+</head>
+<body>
+     <div id="bouncing-container">
+        <!-- Oval background -->
+        <div id="bouncing-oval"></div>
+    <div id="bouncing-text">TWO LIES & A LIE</div>
+</div>
+
+ <div id="yes-corners">
+        <span class="corner-text top-left"><a href="index.html">ENTER</a></span>
+        <span class="corner-text top-right"><a href="index.html">ENTER</a></span>
+        <span class="corner-text bottom-left"><a href="index.html">ENTER</a></span>
+        <span class="corner-text bottom-right"><a href="index.html">ENTER</a></span>
+    </div>
+
+ <div id="custom-cursor"></div>
+ 
+    <script src="script1.js"></script>
+</body>
+</html>
