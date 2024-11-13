@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Button Challenge</title>
+    <style>
+
+
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+            color: black;
+            font-family: arial narrow, sans-serif;
+            cursor: none;
+        }
+
+        /* Style for the floating rectangular button */
+        #floatingButton {
+            position: absolute;
+            background-color: blue;
+            color: black;
+            border: 2px solid black;
+            padding: 5px 10px; /* Adjust padding to make it rectangular */
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 2px 2px 1px rgba(100, 100, 100, 1);
+            transition: transform 0.1s;
+            font-family: arial narrow;
+        }
+
+        /* Effect for button hover (suggests interactivity and clicks) */
+        #floatingButton:hover {
+            transform: scale(0.95); /* Simulates a press-down effect */
+        }
+
+               #custom-cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('cursor.png') no-repeat center center; 
+            background-size: contain;
+            transform: translate(-50%, -50%);
+            animation: rotateCursor 2s linear infinite; 
+        }
+
+
+        @keyframes rotateCursor {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+            .arrow-link {
+            position: fixed; /* Position fixed to stay in the corner */
+            bottom: 20px; /* Adjust distance from the bottom */
+            right: 20px; /* Adjust distance from the right */
+            color: blue;
+            padding: 10px 15px;
+            font-size: 20px;
+            font-style: light;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Floating Button -->
+    <button id="floatingButton">CLICK TO BEGIN</button>
+    <div id="custom-cursor"></div>
+    <a href="indexmany.html" class="arrow-link" title="Go to next page">&#8594;</a> 
+
+    <script>
+        const button = document.getElementById("floatingButton");
+        let speed = 4; // Initial speed of movement
+        let directionX = 1; // Horizontal direction (1 = right, -1 = left)
+        let directionY = 1; // Vertical direction (1 = down, -1 = up)
+        const buttonSize = 50; // Approximate button size (for boundary detection)
+        
+        // Array of colors to choose from
+        const colors = ["#ff00ff", "#00ffff", "ffff00", "#ff0000", "#00ff00", "#ff6800", "#0000ff", "#8f00ff"];
+        
+        // Function to change the button color randomly
+        function changeColor() {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            button.style.backgroundColor = randomColor;
+        }
+
+        // Function to move the button
+        function moveButton() {
+            // Get the button's current position
+            let posX = button.offsetLeft;
+            let posY = button.offsetTop;
+
+            // Update position based on current speed and direction
+            posX += speed * directionX;
+            posY += speed * directionY;
+
+            // Reverse direction if button hits the screen edges
+            if (posX <= 0 || posX + button.offsetWidth >= window.innerWidth) {
+                directionX *= -1;
+                changeColor(); // Change color when hitting the edge
+            }
+            if (posY <= 0 || posY + button.offsetHeight >= window.innerHeight) {
+                directionY *= -1;
+                changeColor(); // Change color when hitting the edge
+            }
+
+            // Apply the new position
+            button.style.left = posX + "px";
+            button.style.top = posY + "px";
+        }
+
+        // Function to handle the button hover
+        function onHover() {
+            speed *= 1.25; // Double the speed on hover
+        }
+
+        // Initial button position and movement
+        button.style.left = "100px";
+        button.style.top = "100px";
+        
+        // Start moving the button at a set interval
+        let interval = setInterval(moveButton, 20); // Adjust time for smoothness
+
+        // Add a hover event listener to double speed and show hover effect
+        button.addEventListener("mouseover", onHover);
+
+                const cursor = document.getElementById('custom-cursor');
+
+        let angle = 0;  
+
+
+        document.addEventListener('mousemove', (e) => {
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
+
+ 
+        cursor.style.left = `${mouseX}px`;
+        cursor.style.top = `${mouseY}px`;
+
+   
+        angle += 5; 
+        cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; 
+});
+    </script>
+</body>
+</html>

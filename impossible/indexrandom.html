@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard to Click Button</title>
+    <style>
+        /* Body styling */
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Button styling */
+        .popup-btn {
+            position: absolute;
+             background-color: lightgrey;
+            color: blue;
+            text-decoration: underline;
+            border: 1.5px solid black;
+            font-size: 14px;
+            box-shadow: 1.5px 1.5px 1px rgba(100, 100, 100, 0.9);
+            font-family: arial narrow;
+            display: absolute
+        }
+
+        .popup-btn a:visited {
+    color: blue; 
+    text-decoration: underline;
+}
+.arrow-link {
+            position: fixed; /* Position fixed to stay in the corner */
+            bottom: 20px; /* Adjust distance from the bottom */
+            right: 20px; /* Adjust distance from the right */
+            color: blue;
+            z-index: 1000;
+            font-size: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="indexscroll.html" class="arrow-link" title="Go to next page">&#8594;</a> 
+    <!-- <div id="wait">WAIT FOR THE BUTTON TO APPEAR</div> -->
+    <script>
+        // Function to get a random number within a given range
+        function getRandomPosition(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        // Function to create a button and position it randomly
+        function createRandomButton() {
+            const button = document.createElement('button');
+            button.classList.add('popup-btn');
+
+
+            const link = document.createElement('a');
+            link.href = "indexscroll.html"; // Link to your target URL
+            link.target = "_blank";
+            link.innerText = "CLICK TO BEGIN";
+            button.appendChild(link);
+            
+            // Get the window's width and height
+            const maxWidth = window.innerWidth - 150; // Button width is ~150px
+            const maxHeight = window.innerHeight - 50; // Button height is ~50px
+
+            // Randomly position the button within the viewport
+            const randomX = getRandomPosition(maxWidth);
+            const randomY = getRandomPosition(maxHeight);
+
+            // Set the button's position
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+
+            // Make the button appear
+            document.body.appendChild(button);
+
+            // Make the button disappear after 1 second
+            setTimeout(() => {
+                button.style.display = 'none';
+            }, 400); // Hide after 1 second
+
+            // Restart the loop to create the next button
+            setTimeout(createRandomButton, 2500); // Delay the next popup slightly
+        }
+
+        // Start the random button creation loop
+        createRandomButton();
+    </script>
+</body>
+</html>

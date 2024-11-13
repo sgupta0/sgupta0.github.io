@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomly Positioned Disappearing Buttons</title>
+    <style>
+        /* Basic body styling */
+        body {
+            margin: 0;
+            padding: 10px;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Style for the button */
+        .disappearing-btn {
+            width: 100px; /* Fixed width */
+            height: 20px;
+           background-color: lightgrey;
+            color: black;
+            text-decoration: none;
+            border: 1.5px solid black;
+            font-size: 14px;
+            box-shadow: 1.5px 1.5px 1px rgba(100, 100, 100, 0.9);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2px;
+            font-family: arial narrow;
+            text-align: center;
+
+        }
+
+        .arrow-link {
+            position: fixed; /* Position fixed to stay in the corner */
+            bottom: 20px; /* Adjust distance from the bottom */
+            right: 20px; /* Adjust distance from the right */
+            color: blue;
+            z-index: 1000;
+            font-size: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    </style>
+</head>
+<body>
+     <a href="indexrandom.html" class="arrow-link" title="Go to next page">&#8594;</a> 
+
+
+    <script>
+        // Function to create a random number within a range
+        function getRandomPosition(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        // Function to create buttons with random positions
+        function createRandomButtons(numButtons) {
+            const body = document.body;
+
+            for (let i = 0; i < numButtons; i++) {
+                const button = document.createElement('button');
+                button.classList.add('disappearing-btn');
+                button.innerText = 'CLICK TO BEGIN';
+
+                // Randomly position the button within the window
+                const maxWidth = window.innerWidth - button.offsetWidth;
+                const maxHeight = window.innerHeight - button.offsetHeight;
+                const randomX = getRandomPosition(maxWidth);
+                const randomY = getRandomPosition(maxHeight);
+
+                button.style.left = `${randomX}px`;
+                button.style.top = `${randomY}px`;
+
+                // Add a mouseover event to make the button disappear when hovered over
+                button.addEventListener('mouseover', () => {
+                    button.style.opacity = '0'; // Make button disappear smoothly
+                    setTimeout(() => {
+                        button.style.display = 'none'; // Completely remove the button after fade
+                    }, 300); // Wait for fade effect before removing button
+                });
+
+                // Append the button to the body
+                body.appendChild(button);
+            }
+        }
+
+        // Call the function to create a number of randomly positioned buttons
+        createRandomButtons(15);  // Create 10 buttons for example
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Button Challenge</title>
+    <style>
+
+            @font-face {
+            font-family: 'Asfalt'; 
+            src: url('fonts/ABCAsfalt-Compressed.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+            color: black;
+            font-family: asfalt;
+            cursor: none;
+        }
+
+        #oops {
+            font-size: 60vw;
+            color: blue;
+            text-align: center;
+            font-family: asfalt;
+            text-decoration: underline;
+            text-decoration-thickness: 25px ;
+        }
+
+        #custom-cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('cursor.png') no-repeat center center; 
+            background-size: contain;
+            transform: translate(-50%, -50%);
+            animation: rotateCursor 2s linear infinite; 
+        }
+
+
+        @keyframes rotateCursor {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+
+    </style>
+     </head>
+    <body>
+        <div id="oops">OOPS</div>
+         <div id="custom-cursor"></div>
+
+         <script>
+            const cursor = document.getElementById('custom-cursor');
+
+let angle = 0;  
+
+
+document.addEventListener('mousemove', (e) => {
+    const mouseX = e.pageX;
+    const mouseY = e.pageY;
+
+ 
+    cursor.style.left = `${mouseX}px`;
+    cursor.style.top = `${mouseY}px`;
+
+   
+    angle += 5; 
+    cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; 
+});
+</script>
+     </body>
+     </html>
+
+
+

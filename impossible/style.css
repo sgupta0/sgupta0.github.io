@@ -1,13 +1,13 @@
 /* styles.css */
     @font-face {
-            font-family: 'Asfalt'; /* Name of the font */
+            font-family: 'Asfalt'; 
             src: url('fonts/ABCAsfalt-Compressed.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
 
 html {
-    cursor: none;  /* Hides the default system cursor */
+    cursor: none;  
     margin: 0;
     padding: 0;
 }
@@ -15,7 +15,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Hide scrollbars */
+    overflow: hidden; 
     position: relative;
     height: 100vh;
     background-color: black;
@@ -24,16 +24,14 @@ body {
 
 #custom-cursor {
     position: absolute;
-    width: 30px;  /* Adjust cursor size */
+    width: 30px;  
     height: 30px;
     border-radius: 50px;
-    background: url('cursor.png') no-repeat center center;  /* Custom cursor image */
+    background: url('cursor.png') no-repeat center center;  
     background-size: contain;
-    pointer-events: none;  /* Prevent the cursor from interfering with interactions */
-    transform: translate(-50%, -50%);  /* Center the cursor */
-    z-index: 9999;  /* Make sure the cursor stays on top */
-
-     animation: rotateCursor 1.3s linear infinite;
+    transform: translate(-50%, -50%); 
+    z-index: 100;  
+    animation: rotateCursor 1.3s linear infinite;
 }
 
 @keyframes rotateCursor {
@@ -45,22 +43,21 @@ body {
     }
 }
 
+
 #bouncing-container {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.1s ease; /* Smooth transition for oval resizing */
+    transition: all 0.1s ease; 
 }
 
-/* The oval background */
+
 #bouncing-oval {
     position: absolute;
-    background-color: rgb(0, 0, 255); /* Semi-transparent background */
-    border-radius: 50%; /* Make it oval */
-/*    padding: 10px;*/
-    z-index: -1; /* Place behind the text */
-/*     width: 150px; */
+    background-color: rgb(0, 0, 255); 
+    border-radius: 50%; 
+    z-index: -1; 
     height: 50px;
 }
 
@@ -69,20 +66,18 @@ body {
     position: relative;
     white-space: nowrap;
     font-weight: regular;
-    transition: color 0.2s ease; /* Smooth color change */
-/*    font-family: Asfalt;*/
- text-shadow: 
+    transition: color 0.2s ease; 
+    text-shadow: 
         -1px -1px 0 #000,  
         1px -1px 0 #000,
         -1px 1px 0 #000,
-        1px 1px 0 #000; /* Creates a black outline around the text */
+        1px 1px 0 #000; 
 }
 
 #yes-corners {
     position: absolute;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Ensure the "YES" texts don't interfere with other interactions */
 }
 
 .corner-text {
@@ -90,13 +85,22 @@ body {
     font-size: 1em;
 /*    font-weight: bold;*/
     color: white;
-    z-index: 10; /* Make sure these texts are above everything else */
+    z-index: 10000; 
     font-family: "ocr-a-std", monospace;
 font-weight: 400;
 font-style: normal;
 }
 
-/* Positioning the YES texts in the four corners */
+.corner-text a{
+    color: white;
+    z-index: 10; 
+    font-family: "ocr-a-std", monospace;
+font-weight: 400;
+font-style: normal;
+text-decoration: none;
+}
+
+
 .top-left {
     top: 10px;
     left: 10px;

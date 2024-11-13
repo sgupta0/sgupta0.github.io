@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            height: 100vh;
+            padding: 20px;
+            margin: 0;
+            font-family: helvetica, sans-serif;
+            font-size: 18px;
+            cursor: none; 
+            line-height: 28px;
+            overflow: hidden;
+        }
+        #text {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .highlight-button {
+            background-color: lightgray;
+            color: blue;
+            border: 1px solid darkgrey;
+            padding: 0 3px;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 0 5px;
+            height: 18px;
+            box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.9);
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            text-align: center;
+            font-family: arial narrow;
+
+        }
+
+        #custom-cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('cursor.png') no-repeat center center; 
+            background-size: contain;
+            transform: translate(-50%, -50%);
+            animation: rotateCursor 2s linear infinite; 
+        }
+
+
+        @keyframes rotateCursor {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+         .arrow-link {
+            position: fixed; /* Position fixed to stay in the corner */
+            bottom: 20px; /* Adjust distance from the bottom */
+            right: 20px; /* Adjust distance from the right */
+            color: blue;
+            padding: 10px 15px;
+            font-size: 20px;
+            font-style: light;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="text"></div>
+    <div id="custom-cursor"></div>
+     <a href="indexfast.html" class="arrow-link" title="Go to next page">&#8594;</a> 
+
+    <script>
+        const paragraph = "To push one's buttons: to do or say something just to make someone angry or upset. This collection of ridiculous microsites encourages the viewer to try and push some buttons to maybe begin their experience.";
+        const words = paragraph.split(" ");
+        const displayElement = document.getElementById("text");
+        let index = 0;
+
+    const buttonWords = ["ridiculous","try","maybe"];
+
+        function displayWord() {
+            if (index < words.length) {
+                const word = words[index];
+                // Check if the word should be a button
+                if (buttonWords.includes(word)) {
+                    // Create a button element for the word
+                    const button = document.createElement("button");
+                    button.className = "highlight-button";
+                    button.textContent = word;
+                    button.onclick = () => alert(`Button '${word}' clicked!`);
+                    displayElement.appendChild(button);
+                } else {
+                    // Add the word as plain text
+                    displayElement.innerHTML += word + " ";
+                }
+                index++;
+                setTimeout(displayWord, 300); // Adjust speed (in milliseconds) here
+            }
+        }
+
+        displayWord();
+
+        //cursor//
+        const cursor = document.getElementById('custom-cursor');
+
+        let angle = 0;  
+
+
+        document.addEventListener('mousemove', (e) => {
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
+
+ 
+        cursor.style.left = `${mouseX}px`;
+        cursor.style.top = `${mouseY}px`;
+
+   
+        angle += 5; 
+        cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; 
+});
+
+    </script>
+</body>
+</html>

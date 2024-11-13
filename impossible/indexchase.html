@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Flying Escape Button</title>
+    <style>
+
+           * {
+            box-sizing: border-box;
+        }
+
+        /* Basic styling for body and button */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            overflow: hidden;
+            padding: 10px;
+            cursor: none;
+        }
+
+        #escapeButton {
+            position: absolute;
+             background-color: lightgrey;
+            color: blue;
+            text-decoration: underline;
+            border: 1.5px solid black;
+            font-size: 14px;
+            box-shadow: 1.5px 1.5px 1px rgba(100, 100, 100, 0.9);
+            font-family: arial narrow;
+        }
+
+
+        #escapeButon a {
+        color: blue;
+            text-decoration: underline;    
+        }
+
+        #escapeButton a:visited {
+    color: blue; /* Same as the original color */
+    text-decoration: underline;
+}
+
+ .arrow-link {
+            position: fixed; /* Position fixed to stay in the corner */
+            bottom: 20px; /* Adjust distance from the bottom */
+            right: 20px; /* Adjust distance from the right */
+            color: blue;
+            z-index: 1000;
+            font-size: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+         #custom-cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('cursor.png') no-repeat center center; 
+            background-size: contain;
+            transform: translate(-50%, -50%);
+            animation: rotateCursor 2s linear infinite; 
+        }
+
+
+        @keyframes rotateCursor {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+        <a href="indexdark.html" class="arrow-link" title="Go to next page">&#8594;</a> 
+    <!-- Button that escapes the cursor -->
+    <button id="escapeButton"><a href="indexchase.html">CLICK TO BEGIN</a></button>
+    <div id="custom-cursor"></div>
+
+    <script>
+        const button = document.getElementById('escapeButton');
+        const escapeDistance = 180; // Distance threshold for starting the escape
+        const moveSpeed = 0.1; // Speed multiplier for smooth motion
+
+        let targetX = window.innerWidth / 2;
+        let targetY = window.innerHeight / 2;
+
+        // Update button position gradually to achieve a flying effect
+        function moveButtonSmoothly() {
+            const rect = button.getBoundingClientRect();
+            const currentX = rect.left + rect.width / 2;
+            const currentY = rect.top + rect.height / 2;
+
+            // Calculate the difference between the current position and target position
+            const deltaX = targetX - currentX;
+            const deltaY = targetY - currentY;
+
+            // Move the button gradually towards the target position
+            button.style.left = `${rect.left + deltaX * moveSpeed}px`;
+            button.style.top = `${rect.top + deltaY * moveSpeed}px`;
+
+            requestAnimationFrame(moveButtonSmoothly);
+        }
+
+        document.addEventListener('mousemove', (event) => {
+            const buttonRect = button.getBoundingClientRect();
+            const cursorX = event.clientX;
+            const cursorY = event.clientY;
+
+            // Calculate the distance between the cursor and button's center
+            const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+            const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+            const distance = Math.sqrt(
+                (cursorX - buttonCenterX) ** 2 + (cursorY - buttonCenterY) ** 2
+            );
+
+            // If the cursor is within escape distance, move the button away
+            if (distance < escapeDistance) {
+                // Calculate direction to move the button away from the cursor
+                const angle = Math.atan2(buttonCenterY - cursorY, buttonCenterX - cursorX);
+                targetX = buttonCenterX + Math.cos(angle) * escapeDistance;
+                targetY = buttonCenterY + Math.sin(angle) * escapeDistance;
+
+                // Clamp target within viewport boundaries
+                targetX = Math.max(0, Math.min(window.innerWidth - buttonRect.width, targetX));
+                targetY = Math.max(0, Math.min(window.innerHeight - buttonRect.height, targetY));
+
+                 targetX = Math.max(0, Math.min(window.innerWidth - buttonRect.width, targetX));
+                targetY = Math.max(0, Math.min(window.innerHeight - buttonRect.height, targetY));
+            }
+        });
+
+        // Start the smooth movement loop
+        requestAnimationFrame(moveButtonSmoothly);
+
+                    const cursor = document.getElementById('custom-cursor');
+
+let angle = 0;  
+
+
+document.addEventListener('mousemove', (e) => {
+    const mouseX = e.pageX;
+    const mouseY = e.pageY;
+
+ 
+    cursor.style.left = `${mouseX}px`;
+    cursor.style.top = `${mouseY}px`;
+
+   
+    angle += 5; 
+    cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; 
+});
+    </script>
+</body>
+</html>

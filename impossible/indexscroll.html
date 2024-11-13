@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laggy Cursor and Long Loading</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full screen with black background */
+        body {
+            background-color: #000;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin: 0;
+            cursor: none; /* Hide default cursor */
+        }
+
+        /* Centered Button */
+        .center-button {
+            padding: 5px 5px;
+            font-size: 14px;
+            background-color: blue;
+            color: black;
+            border: 1px solid black;
+            box-shadow: 2px 2px 1px rgba(100, 100, 100, 1);
+            cursor: pointer;
+            z-index: 10;
+            position: relative;
+            text-align: center;
+            font-family: arial narrow;
+        
+
+        animation: blink 0.3s infinite alternate; /* 1 second interval, infinite, alternate opacity */
+        }
+
+        /* Blinking Keyframe Animation */
+         @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            25% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+     .center-button a {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Loading popup style */
+        #loading-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            border: 2px solid lightgrey;
+            border-top: 2px solid blue;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 4s linear infinite;
+        }
+
+        /* Spinner animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Laggy Cursor */
+    
+            .laggy-cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('cursor.png') no-repeat center center; 
+            background-size: contain;
+            transform: translate(-50%, -50%);
+            animation: rotateCursor 4s linear infinite; 
+        }
+
+
+        @keyframes rotateCursor {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- The Centered Button -->
+    <button class="center-button" id="load-btn">
+        <a href="indexfast.html" id="delayed-link" target="_blank">ClICK TO BEGIN</a>
+    </button>
+
+    <!-- Loading Pop-up -->
+    <div id="loading-popup">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Laggy Cursor Element -->
+    <div class="laggy-cursor" id="laggy-cursor"></div>
+
+    <script>
+        // Laggy Cursor Movement
+        const laggyCursor = document.getElementById('laggy-cursor');
+        const delay = 800;  // Set delay in ms for cursor movement
+        let mouseX = 0, mouseY = 0;
+
+        // Update cursor position on mousemove with a delay
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        setInterval(() => {
+            laggyCursor.style.left = mouseX + 'px';
+            laggyCursor.style.top = mouseY + 'px';
+        }, delay);
+
+        // Button Click to Show Loading
+       const loadButton = document.getElementById('load-btn');
+        const delayedLink = document.getElementById('delayed-link');
+        const loadingPopup = document.getElementById('loading-popup');
+
+        loadButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the default link behavior
+
+            // Show loading popup
+            loadingPopup.style.display = 'flex';
+
+            // Simulate a delay before allowing the hyperlink to work
+            setTimeout(() => {
+                // After a long delay, follow the link (now that the loading icon has appeared)
+                window.location.href = delayedLink.href;
+            }, 15000); // 5000ms = 5 seconds delay
+        });
+
+        const cursor = document.getElementById('custom-cursor');
+
+        let angle = 0;  
+
+
+        document.addEventListener('mousemove', (e) => {
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
+
+ 
+        cursor.style.left = `${mouseX}px`;
+        cursor.style.top = `${mouseY}px`;
+
+   
+        angle += 5; 
+        cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; 
+});
+    </script>
+
+</body>
+</html>
+
+
