@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <style>
+        body {
+            background: url('windows3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            height: 100vh;
+            padding: 20px;
+            margin: 0;
+            font-family: arial;
+            font-size: 18px;
+            cursor: none; 
+            line-height: 28px;
+            overflow: hidden;
+        }
+
+#text {
+    max-width: 600px;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    line-height: 1.2; /* Adjust line-height for tight spacing */
+}
+
+.highlighted-word {
+    background-color: black; /* Black highlight for text */
+    color: white;
+    display: inline; /* Ensure the highlight wraps tightly around the text */
+    padding: 0; /* No padding for tight wrap */
+    margin: 0; /* No margin for uniform spacing */
+}
+
+        .highlight-button {
+            background-color: lightgray;
+            color: blue;
+            border-right: 1.5px solid darkgrey;
+            border-bottom: 1.5px solid darkgrey;
+            border-left: 1.2px solid white;
+            border-top: 1.2px solid white;
+            padding: 0 3px;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 0 5px;
+            height: 18px;
+            box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.9);
+            text-align: center;
+            font-family: arial narrow;
+            animation: blink 2s infinite ease-in-out;
+            opacity: 1;
+        }
+
+        /* Blinking Keyframe Animation */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            25% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #custom-cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('cursor.png') no-repeat center center; 
+            background-size: contain;
+            transform: translate(-50%, -50%);
+            animation: rotateCursor 2s linear infinite; 
+        }
+
+        @keyframes rotateCursor {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+      .arrow-link {
+    position: fixed; /* Stays in the corner */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    color: blue; /* Text color */
+    font-size: 20px; /* Font size for the arrow */
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px; /* Padding around the arrow */
+    z-index: 10; /* Make sure it’s above other elements */
+}
+
+.arrow-link::before {
+    content: ""; /* Empty content for the rectangle */
+    position: absolute; /* Position relative to the arrow link */
+    bottom: 0; /* Align with arrow */
+    left: 0;
+    width: 100%; /* Match arrow-link width */
+    height: 80%; /* Match arrow-link height */
+    background-color: darkgrey; /* Rectangle background color */
+    border-right: 1.5px solid black;
+            border-bottom: 1.5px solid black;
+            border-left: 1.2px solid white;
+            border-top: 1.2px solid white;
+    z-index: -1; /* Behind the arrow */
+    transition: transform 0.3s ease; /* Optional: Smooth hover effect */
+}
+
+/* Add hover effect for the rectangle */
+.arrow-link:hover::before {
+    transform: scale(1.1); /* Slightly enlarge rectangle on hover */
+}
+
+
+
+
+
+.retro-window {
+    width: 300px; /* Set a fixed width for the window */
+    height: 200px;
+    border-right: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    border-left: 1.5px solid white;
+    border-top: 1.5px solid white;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8); /* Shadow for a 3D effect */
+    font-family: arial narrow; /* Retro font */
+    position: fixed;
+    top: calc(50% - 200px); /* Vertically centered (50% of viewport minus half the height) */
+    left: calc(50% + 200px); /* Horizontally centered (50% of viewport minus half the width) */
+    box-sizing: border-box;
+    overflow: visible; /* Allow the borders to be visible */
+}
+
+
+/* Title text */
+.title-text {
+    font-size: 12px;
+    line-height: 24px;
+    padding-left: 4px;
+}
+
+
+.scroll-container {
+    white-space: wrap; 
+    padding: 10px; 
+    font-size: 14px;
+    line-height: 1.5;
+    color: lightgray;
+    font-family: arial narrow;
+    background: linear-gradient(to right, #1a26a1, #0071bc);
+}
+
+
+
+/* Folder Icon */
+.folder-container {
+    position: relative;
+    margin: 50px; /* Adjust positioning as needed */
+}
+
+.folder-icon {
+    font-size: 48px; /* Large folder icon */
+    cursor: pointer;
+    display: inline-block;
+    color: goldenrod; /* Folder color */
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); /* Retro-style shadow */
+    transition: transform 0.2s ease; /* Add hover effect */
+}
+
+.folder-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Retro Popup Window */
+.window {
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    top: calc(50% - 100px);
+    left: calc(50% - 250px);
+    border-right: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    border-left: 1.5px solid white;
+    border-top: 1.5px solid white;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8); /* Shadow for a 3D effect */
+    font-family: arial narrow; /* Retro font */
+    background-color: gray;
+    font-family: arial narrow;
+    z-index: 10;
+    box-sizing: border-box;
+    overflow: visible; /* Allow the borders to be visible */
+
+}
+
+/* Title Bar */
+.title-bar {
+    background: linear-gradient(to right, #1a26a1, #0071bc);
+    padding: 5px 10px;
+    color: lightgray;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    height: 16px;
+    font-family: arial narrow;
+}
+
+/* Title Text */
+.title {
+    font-size: 12px;
+    line-height: 24px;
+}
+
+/* Window Buttons */
+.window-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.button {
+    width: 12px;
+    height: 12px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+
+.close {
+    background-color: lightgray;
+}
+
+/* Retro Content */
+.retro-content {
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: greenyellow;
+    background-color: darkgrey;
+    height: calc(100% - 28px);
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.trash-container {
+            position: fixed;
+            bottom: 330px;
+            right: 1200px;
+            padding: 10px;
+/*            border-radius: 50%; 
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); */
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+.trash-icon {
+    font-size: 36px; /* Adjust size */
+   display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+          .trash-button {
+            position: absolute;
+            bottom: 28px; /* Position the button slightly outside */
+            left: 40%;
+            transform: translateX(-50%) rotate(80deg);; /* Center the button horizontally */
+            padding: 1px 10px;
+            font-size: 8px;
+            color: blue;
+            background-color: lightgray; /* Button color */
+            border-right: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    border-left: 1.5px solid white;
+    border-top: 1.5px solid white;
+            cursor: pointer;
+            font-family: Arial narrow, sans-serif;
+            z-index: -1;
+            white-space: nowrap;
+        }
+
+.trash-button a{
+    color: blue;
+
+    </style>
+</head>
+<body>
+    <div id="text"></div>
+    <div id="custom-cursor"></div>
+    <div class="arrow-link">&#8594;</div>
+<div class="retro-window">
+        <span class="title-text">PUSHING BUTTONS</span>
+    <div class="retro-content scroll-container">
+        <div class="scroll-content">
+           To push one's buttons: to do or say something just to make someone angry or upset. This collection of ridiculous microsites encourages the viewer to try and push some buttons to maybe begin their experience.
+       </div>
+   </div>
+<div class="folder-container">
+    <!-- Folder Icon -->
+    <div class="folder-icon" onclick="openPopup()">📁</div>
+    
+    <!-- Popup Rectangle -->
+    <div id="popup-window" class="window" style="display: none;">
+        <div class="title-bar">
+            <span class="title">PUSHING BUTTONS</span>
+            <div class="window-buttons">
+                <span class="button close" onclick="closePopup()"></span>
+            </div>
+        </div>
+        <div class="retro-content">
+            To push one's buttons: to do or say something just to make someone angry or upset. This collection of ridiculous microsites encourages the viewer to try and push some buttons to maybe begin their experience.
+        </div>
+    </div>
+</div>
+ <div class="trash-container">
+        <div class="trash-icon">
+            🗑️
+            <button class="trash-button"><a href="indexfast.html">CLICK TO BEGIN</a></button>
+        </div>
+    </div>
+
+   <div class="random-button"></div>
+
+    <script>
+        const paragraph = "To push one's buttons: to do or say something just to make someone angry or upset. This collection of ridiculous microsites encourages the viewer to try and push some buttons to maybe begin their experience.";
+        const words = paragraph.split(" ");
+        const displayElement = document.getElementById("text");
+        let index = 0;
+
+        const buttonWords = ["ridiculous", "try", "maybe"];
+
+function displayWord() {
+    if (index < words.length) {
+        const word = words[index];
+        const wordContainer = document.createElement("span"); // Container for each word
+        wordContainer.className = "highlighted-word"; // Apply Yale-style highlight
+        wordContainer.textContent = word; // Add word content
+
+        if (buttonWords.includes(word)) {
+            // Create a button element for the word
+            const button = document.createElement("button");
+            button.className = "highlight-button";
+            button.textContent = word;
+            button.onclick = () => alert(`Button '${word}' clicked!`);
+            displayElement.appendChild(button); // Append the button directly
+        } else {
+            displayElement.appendChild(wordContainer); // Add plain highlighted word
+        }
+
+        displayElement.innerHTML += " "; // Add space between words
+        index++;
+        setTimeout(displayWord, 300); // Adjust speed (in milliseconds) here
+    }
+}
+
+
+
+        displayWord();
+
+        // Custom Cursor
+        const cursor = document.getElementById('custom-cursor');
+        let angle = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.pageX;
+            const mouseY = e.pageY;
+
+            cursor.style.left = `${mouseX}px`;
+            cursor.style.top = `${mouseY}px`;
+
+            angle += 5;
+            cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+        });
+
+        function openPopup() {
+    const popup = document.getElementById('popup-window');
+    popup.style.display = 'block'; // Show the popup
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup-window');
+    popup.style.display = 'none'; // Hide the popup
+}
+
+    </script>
+</body>
+</html>

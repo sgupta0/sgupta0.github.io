@@ -10,8 +10,9 @@
             margin: 0;
             padding: 10px;
             height: 100vh;
-            overflow: hidden;
-            background-color: black;
+            overflow-y: scroll;
+            overflow-x: scroll;
+            background-color: #1a26a1;
             display: flex;
             flex-wrap: wrap;
         }
@@ -20,12 +21,15 @@
         .disappearing-btn {
             width: 100px; /* Fixed width */
             height: 20px;
-           background-color: lightgrey;
-            color: black;
+           background-color: darkgrey;
+            color: blue;
             text-decoration: none;
-            border: 1.5px solid black;
+            border-right: 1.5px solid black;
+            border-bottom: 1.5px solid black;
+            border-left: 2px solid lightgrey;
+            border-top: 2px solid lightgrey;
             font-size: 14px;
-            box-shadow: 1.5px 1.5px 1px rgba(100, 100, 100, 0.9);
+            box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.5);
             position: absolute;
             display: flex;
             justify-content: center;
@@ -36,25 +40,35 @@
 
         }
 
-        .arrow-link {
-            position: fixed; /* Position fixed to stay in the corner */
-            bottom: 20px; /* Adjust distance from the bottom */
-            right: 20px; /* Adjust distance from the right */
+
+          #hiddenButton {
+            width: 98px; /* Fixed width */
+            height: 18px;
+           background-color: darkgrey;
             color: blue;
-            z-index: 1000;
-            font-size: 20px;
             text-decoration: none;
+            border-right: 1.5px solid black;
+            border-bottom: 1.5px solid black;
+            border-left: 2px solid lightgrey;
+            border-top: 2px solid lightgrey;
+            font-size: 14px;
+            box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.5);
+            position: absolute;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            padding: 0;
+            font-family: arial narrow;
+            text-align: center;
+            top: 50%; /* Center the button vertically */
+            left: 190%; /* Initially position off-screen */
         }
 
 
     </style>
 </head>
 <body>
-     <a href="indexrandom.html" class="arrow-link" title="Go to next page">&#8594;</a> 
-
+     <a id="hiddenButton" href="indexrandom.html">CLICK TO BEGIN</a> 
 
     <script>
         // Function to create a random number within a range
@@ -72,8 +86,8 @@
                 button.innerText = 'CLICK TO BEGIN';
 
                 // Randomly position the button within the window
-                const maxWidth = window.innerWidth - button.offsetWidth;
-                const maxHeight = window.innerHeight - button.offsetHeight;
+                  const maxWidth = window.innerWidth * 2 - button.offsetWidth; // Allow buttons to go beyond the viewport width
+                const maxHeight = window.innerHeight * 2 - button.offsetHeight; // Allow buttons to go beyond the viewport height
                 const randomX = getRandomPosition(maxWidth);
                 const randomY = getRandomPosition(maxHeight);
 
@@ -94,7 +108,8 @@
         }
 
         // Call the function to create a number of randomly positioned buttons
-        createRandomButtons(15);  // Create 10 buttons for example
+        createRandomButtons(20);  // Create 10 buttons for example
+
 
     </script>
 </body>

@@ -12,7 +12,9 @@
 
         body {
             margin: 0;
-            background: #1a26a1;
+            background: url('windows3.jpg') no-repeat center center fixed;
+            background-size: cover;
+/*            background-color: black;*/
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); /* Create flexible columns */
             grid-template-rows: repeat(auto-fill, minmax(25px, 1fr)); /* Create flexible rows */
@@ -26,13 +28,13 @@
 
         /* Style for the buttons */
         .button {
-            background-color: darkgrey;
+            background-color: rgb(172, 172, 172);
             color: blue;
             text-decoration: underline;
             border-right: 1.5px solid black;
             border-bottom: 1.5px solid black;
-            border-top: 1.5px solid white;
-            border-left: 1.5px solid white;
+            border-left: 1.2px solid white;
+            border-top: 1.2px solid white;
             font-size: 14px;
             box-shadow: 1.5px 1.5px 1px rgba(100, 100, 100, 0.9);
             transition: transform 0.1s, background-color 0.3s;
@@ -46,7 +48,8 @@
 
         /* Hover effect for the buttons */
         .button:hover {
-            background-color: lightgray; /* Darker color on hover */
+            transform: scale(0.95); /* Simulates a press-down effect */
+            background-color: rgb(61,139,244); /* Darker color on hover */
         }
 
         .button a:visited {
@@ -54,18 +57,23 @@
     text-decoration: underline;
 }
 
-.special-button:hover {
-    background-color: #1a26a1;  /* Tomato color on hover */
-    color: darkgrey;
-}
-.special-button:hover a{
-    background-color: #1a26a1;  /* Tomato color on hover */
-    color: darkgrey;
-}
+     .arrow-link {
+            position: fixed; /* Position fixed to stay in the corner */
+            bottom: 20px; /* Adjust distance from the bottom */
+            right: 20px; /* Adjust distance from the right */
+            color: blue;
+            z-index: 1000;
+            font-size: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
     </style>
 </head>
 <body>
+    <a href="indexchase.html" class="arrow-link" title="Go to next page">&#8594;</a> 
     <!-- Create multiple buttons dynamically or statically -->
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
@@ -145,37 +153,6 @@
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
-    <button class="button special-button"><a href="indexchase.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
@@ -189,48 +166,9 @@
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
-    <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
@@ -240,10 +178,10 @@
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
-    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
@@ -261,7 +199,75 @@
     <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
@@ -269,13 +275,15 @@
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
+    <button class="button">CLICK TO BEGIN</button>
+    <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
     <button class="button">CLICK TO BEGIN</button>
     <button class="button"><a href="indexoops.html">CLICK TO BEGIN</a></button>
-    <button class="button">CLICK TO BEGIN</button>
+    <button class="button">CLICK TO NEXT</button>
 
 
 

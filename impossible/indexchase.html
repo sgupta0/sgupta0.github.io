@@ -17,7 +17,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: black;
+            background-color: #1a26a1;
             overflow: hidden;
             padding: 10px;
             cursor: none;
@@ -25,10 +25,13 @@
 
         #escapeButton {
             position: absolute;
-             background-color: lightgrey;
+             background-color: darkgrey;
             color: blue;
             text-decoration: underline;
-            border: 1.5px solid black;
+            border-right: 1.5px solid black;
+            border-bottom: 1.5px solid black;
+            border-top: 1.5px solid white;
+            border-left: 1.5px solid white;
             font-size: 14px;
             box-shadow: 1.5px 1.5px 1px rgba(100, 100, 100, 0.9);
             font-family: arial narrow;
@@ -45,17 +48,56 @@
     text-decoration: underline;
 }
 
- .arrow-link {
-            position: fixed; /* Position fixed to stay in the corner */
-            bottom: 20px; /* Adjust distance from the bottom */
-            right: 20px; /* Adjust distance from the right */
-            color: blue;
-            z-index: 1000;
-            font-size: 20px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    .arrow-link {
+    position: fixed; /* Stays in the corner */
+    bottom: 200px; /* Distance from the bottom */
+    right: 850px; /* Distance from the right */
+    color: blue; /* Text color */
+    font-size: 80px; /* Font size for the arrow */
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    font-family: arial narrow;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px; /* Padding around the arrow */
+    z-index: 10; /* Make sure it’s above other elements */
+}
+
+.arrow-link::before {
+    content: ""; /* Empty content for the rectangle */
+    position: absolute; /* Position relative to the arrow link */
+    bottom: 20px; /* Align with arrow */
+    left: 0;
+    width: 100%; /* Match arrow-link width */
+    height: 40%; /* Match arrow-link height */
+    background-color: lightgray; /* Rectangle background color */
+    border-right: 1.5px solid darkgrey;
+            border-bottom: 1.5px solid darkgrey;
+            border-left: 1.5px solid white;
+            border-top: 1.5px solid white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Soft shadow for a 3D effect */
+    z-index: -1; /* Behind the arrow */
+    animation: blink 0.3s infinite alternate; /* 1 second interval, infinite, alternate opacity */
+        }
+
+        /* Blinking Keyframe Animation */
+         @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            25% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
         }
 
          #custom-cursor {
@@ -78,13 +120,49 @@
             }
         }
 
+        #growingText {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-family: Arial narrow, sans-serif;
+    font-size: 1px; /* Starting size */
+    color: #1a26a1;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    animation: growText 30s ease-in-out ; /* Animation for growth */
+}
+
+/* Animation to grow the text */
+@keyframes growText {
+    0% {
+        font-size: 1px; /* Start small */
+    }
+
+    100% {
+        font-size: 18px; /* End small again, for a loop effect */
+    }
+}
+
+       #growingText a{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-family: Arial narrow, sans-serif;
+    font-size: 1px; /* Starting size */
+    color: #1a26a1;
+    text-decoration: none;
+     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    animation: growText 30s ease-in-out ; /* Animation for growth */
+ 
+}
+
     </style>
 </head>
 <body>
-        <a href="indexdark.html" class="arrow-link" title="Go to next page">&#8594;</a> 
+        <a href="indexfast.html" class="arrow-link" title="Go to next page">&#8594;</a> 
     <!-- Button that escapes the cursor -->
     <button id="escapeButton"><a href="indexchase.html">CLICK TO BEGIN</a></button>
     <div id="custom-cursor"></div>
+    <a href="indexdark.html" id="growingText">or click here</a>
 
     <script>
         const button = document.getElementById('escapeButton');

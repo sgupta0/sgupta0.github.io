@@ -56,12 +56,44 @@
             }
         }
 
+                    .arrow-link {
+    position: fixed; /* Stays in the corner */
+    bottom: 200px; /* Distance from the bottom */
+    right: 850px; /* Distance from the right */
+    color: blue; /* Text color */
+    font-size: 80px; /* Font size for the arrow */
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: arial narrow;
+    padding: 5px 5px; /* Padding around the arrow */
+    z-index: 10; /* Make sure it’s above other elements */
+}
+
+.arrow-link::before {
+    content: ""; /* Empty content for the rectangle */
+    position: absolute; /* Position relative to the arrow link */
+    bottom: 20px; /* Align with arrow */
+    left: 0;
+    width: 100%; /* Match arrow-link width */
+    height: 40%; /* Match arrow-link height */
+    background-color: lightgray; /* Rectangle background color */
+    border-right: 1.5px solid darkgrey;
+            border-bottom: 1.5px solid darkgrey;
+            border-left: 1.5px solid white;
+            border-top: 1.5px solid white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Soft shadow for a 3D effect */
+    z-index: -1; /* Behind the arrow */
+}
+
 
     </style>
      </head>
     <body>
         <div id="oops">OOPS</div>
          <div id="custom-cursor"></div>
+         <a href="indexmany.html" class="arrow-link" title="Go to next page">&#8594;</a> 
 
          <script>
             const cursor = document.getElementById('custom-cursor');

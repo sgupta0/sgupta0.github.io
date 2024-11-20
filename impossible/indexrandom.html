@@ -7,7 +7,7 @@
     <style>
         /* Body styling */
         body {
-            background-color: black;
+            background-color: #1a26a1;
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -20,12 +20,15 @@
         /* Button styling */
         .popup-btn {
             position: absolute;
-             background-color: lightgrey;
+             background-color: darkgrey;
             color: blue;
             text-decoration: underline;
-            border: 1.5px solid black;
+            border-right: 1.5px solid black;
+            border-bottom: 1.5px solid black;
+            border-left: 2px solid lightgrey;
+            border-top: 2px solid lightgrey;
             font-size: 14px;
-            box-shadow: 1.5px 1.5px 1px rgba(100, 100, 100, 0.9);
+            box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.5);
             font-family: arial narrow;
             display: absolute
         }
@@ -34,23 +37,11 @@
     color: blue; 
     text-decoration: underline;
 }
-.arrow-link {
-            position: fixed; /* Position fixed to stay in the corner */
-            bottom: 20px; /* Adjust distance from the bottom */
-            right: 20px; /* Adjust distance from the right */
-            color: blue;
-            z-index: 1000;
-            font-size: 20px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
     </style>
 </head>
 <body>
-    <a href="indexscroll.html" class="arrow-link" title="Go to next page">&#8594;</a> 
+
     <!-- <div id="wait">WAIT FOR THE BUTTON TO APPEAR</div> -->
     <script>
         // Function to get a random number within a given range
@@ -66,7 +57,6 @@
 
             const link = document.createElement('a');
             link.href = "indexscroll.html"; // Link to your target URL
-            link.target = "_blank";
             link.innerText = "CLICK TO BEGIN";
             button.appendChild(link);
             
@@ -88,7 +78,7 @@
             // Make the button disappear after 1 second
             setTimeout(() => {
                 button.style.display = 'none';
-            }, 400); // Hide after 1 second
+            }, 1000); // Hide after 1 second
 
             // Restart the loop to create the next button
             setTimeout(createRandomButton, 2500); // Delay the next popup slightly

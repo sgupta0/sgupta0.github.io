@@ -8,7 +8,8 @@
 
 
         body {
-            background: #1a26a1;
+            background: url('windows3.jpg') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,10 +26,10 @@
             position: absolute;
             background-color: blue;
             color: black;
-            border-right: 2px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid white;
-            border-left: 2px solid white;
+            border-right: 1.5px solid black;
+            border-bottom: 1.5px solid black;
+            border-left: 1.2px solid white;
+            border-top: 1.2px solid white;
             padding: 5px 10px; /* Adjust padding to make it rectangular */
             cursor: pointer;
             font-size: 14px;
@@ -62,35 +63,18 @@
             }
         }
 
-              .arrow-link {
-    position: fixed; /* Stays in the corner */
-    bottom: 200px; /* Distance from the bottom */
-    right: 850px; /* Distance from the right */
-    color: blue; /* Text color */
-    font-size: 80px; /* Font size for the arrow */
-    text-decoration: none; /* Remove underline */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 5px; /* Padding around the arrow */
-    z-index: 10; /* Make sure it’s above other elements */
-    display: none;
-}
-
-.arrow-link::before {
-    content: ""; /* Empty content for the rectangle */
-    position: absolute; /* Position relative to the arrow link */
-    bottom: 20px; /* Align with arrow */
-    left: 0;
-    width: 100%; /* Match arrow-link width */
-    height: 40%; /* Match arrow-link height */
-    background-color: lightgray; /* Rectangle background color */
-    border-right: 1.5px solid darkgrey;
-            border-bottom: 1.5px solid darkgrey;
-            border-left: 1.5px solid white;
-            border-top: 1.5px solid white;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Soft shadow for a 3D effect */
-    z-index: -1; /* Behind the arrow */
+            .arrow-link {
+            position: fixed; /* Position fixed to stay in the corner */
+            bottom: 20px; /* Adjust distance from the bottom */
+            right: 20px; /* Adjust distance from the right */
+            color: blue;
+            padding: 10px 15px;
+            font-size: 20px;
+            font-style: light;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
     </style>
@@ -109,7 +93,7 @@
         const buttonSize = 50; // Approximate button size (for boundary detection)
         
         // Array of colors to choose from
-        const colors = ["blue", "lightgray", "white", "darkgray", "#1a26a1", "#0071bc"];
+        const colors = ["#ff00ff", "#00ffff", "ffff00", "#ff0000", "#00ff00", "#ff6800", "#0000ff", "#8f00ff"];
         
         // Function to change the button color randomly
         function changeColor() {
@@ -174,12 +158,6 @@
         angle += 5; 
         cursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; 
 });
-
-          window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.arrow-link').style.display = 'flex'; // Make the arrow link visible after 30 seconds
-            }, 30000); // 30 seconds (30000 milliseconds)
-        };
     </script>
 </body>
 </html>
